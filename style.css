@@ -1285,33 +1285,6 @@ body {
 }
 
 /* Footer */
-/* ===================================================================
-   Site footer — four stacked sections
-   Spec (applies to the INNER content width, not the outer section):
-   A. Top bar:        1280 x 93,      padding 12px 48px
-   B. Mega menu:       1280 x 553.59, padding 48px 24px 0
-   C. Lower footer:    1280 x 257.59, padding 24px 48px 0
-   D. Bottom bar:       1280 x 83.2,  padding 0 48px
-
-   Each section's background now spans the full viewport width (full
-   bleed), with an "__inner" wrapper capped at max-width: 1280px and
-   centered via margin auto, holding the original padding + layout.
-   This is the standard pattern for footers: colour goes edge to edge,
-   content stays aligned to the page's content column.
-
-   A + B share the lighter navy; C + D share the darker navy, matching
-   the colour break visible right before the About/Discover Udemy row.
-=================================================================== */
-
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #ffffff;
-}
-
 .ft {
   width: 100%;
   font-family: 'Udemy Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
