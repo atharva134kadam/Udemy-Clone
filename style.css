@@ -7,6 +7,7 @@
 
 body{
     background:#fff;
+    overflow-x:hidden;
 }
 
 .navbar{
@@ -16,6 +17,7 @@ body{
     padding:0 28px;
     gap:30px;
     border-bottom:1px solid #e8e8e8;
+    position:relative;
 }
 
 /* Logo */
@@ -24,6 +26,32 @@ body{
     width:108px;
     cursor:pointer;
 }
+
+/* Hamburger (mobile only) */
+.nav-toggle{
+    display:none;
+    width:40px;
+    height:40px;
+    border:1px solid #6d28d9;
+    border-radius:10px;
+    background:#fff;
+    cursor:pointer;
+    flex-shrink:0;
+    align-items:center;
+    justify-content:center;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after{
+    content:"";
+    display:block;
+    width:18px;
+    height:2px;
+    background:#2d2f31;
+    position:relative;
+}
+.nav-toggle span::before{ position:absolute; top:-6px; }
+.nav-toggle span::after{ position:absolute; top:6px; }
 
 /* Left Menu */
 
@@ -49,6 +77,7 @@ body{
 .search-box{
     flex:1;
     max-width:870px;
+    min-width:0;
     height: 50px;
     border:1px solid #8f8fb0;
     border-radius:999px;
@@ -61,10 +90,12 @@ body{
 .search-box i{
     color:#93979d;
     font-size:18px;
+    flex-shrink:0;
 }
 
 .search-box input{
     width:100%;
+    min-width:0;
     border:none;
     outline:none;
     font-size:14px;
@@ -113,6 +144,7 @@ body{
     font-size:14px;
     font-weight:700;
     cursor:pointer;
+    white-space:nowrap;
 }
 
 .signup-btn{
@@ -125,7 +157,7 @@ body{
     font-size: 14px;
     font-weight:700;
     cursor:pointer;
-    
+    white-space:nowrap;
 }
 
 .lang-btn{
@@ -137,18 +169,69 @@ body{
     border-radius:10px;
     font-size:18px;
     cursor:pointer;
+    flex-shrink:0;
 }
 
 .right-actions{
     display:flex;
     align-items:center;
     gap:8px;
+    flex-shrink:0;
+}
+
+/* ============================================================
+   NAVBAR RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px){
+    .navbar{ gap:16px; padding:0 20px; }
+    .right-links{ display:none; }
+}
+
+@media (max-width: 860px){
+    .navbar{ flex-wrap:wrap; height:auto; padding:12px 16px; row-gap:12px; }
+    .nav-toggle{ display:flex; order:1; }
+    .logo{ order:2; }
+    .logo img{ width:92px; }
+    .right-actions{ order:3; margin-left:auto; }
+    .search-box{ order:5; flex:1 1 100%; max-width:none; height:44px; }
+    .nav-links{
+        order:4;
+        flex:1 1 100%;
+        flex-direction:column;
+        gap:0;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height .25s ease;
+    }
+    .navbar.nav-open .nav-links{ max-height:220px; }
+    .nav-links li{ border-top:1px solid #f0f0f0; }
+    .nav-links a{ display:block; padding:12px 4px; }
+    .right-links{
+        display:flex;
+        order:6;
+        flex:1 1 100%;
+        flex-direction:column;
+        gap:0;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height .25s ease;
+    }
+    .navbar.nav-open .right-links{ max-height:120px; margin-top:4px; }
+    .right-links a{ display:block; padding:10px 4px; border-top:1px solid #f0f0f0; }
+}
+
+@media (max-width: 480px){
+    .signup-btn{ padding:0 14px; font-size:13px; }
+    .login-btn{ padding:0 14px; font-size:13px; }
+    .cart{ display:none; }
 }
 
 /* Section 1 */
 .hero-slider{
-    width:1280px;
-    height:382px;
+    width:100%;
+    max-width:1280px;
+    aspect-ratio: 1280 / 382;
+    height:auto;
     margin:0 auto;
     position:relative;
     overflow:hidden;
@@ -187,51 +270,53 @@ body{
 }
 
 .content-box1{
-    width:530px;
+    width:min(530px, 86%);
     background:#fff;
-    padding:35px 30px;
+    padding: clamp(16px, 4vw, 35px) clamp(14px, 3vw, 30px);
     position:absolute;
-    top:60px;
-    left:85px;
+    top: clamp(16px, 8%, 60px);
+    left: clamp(16px, 7%, 85px);
     box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
 .content-box2{
-    width:530px;
+    width:min(530px, 86%);
     background:#fff;
-    padding:35px 30px;
+    padding: clamp(16px, 4vw, 35px) clamp(14px, 3vw, 30px);
     position:absolute;
-    top:60px;
-    left:85px;
+    top: clamp(16px, 8%, 60px);
+    left: clamp(16px, 7%, 85px);
     box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
 
-.content-box h1{
-    font-size:30px;
+.content-box h1, .content-box1 h1, .content-box2 h1{
+    font-size: clamp(18px, 3.4vw, 30px);
     color:#2d2f31;
-    margin-bottom:18px;
+    margin-bottom: clamp(8px, 1.5vw, 18px);
+    line-height:1.2;
 }
 
-.content-box p{
-    font-size:12px;
+.content-box p, .content-box1 p, .content-box2 p{
+    font-size: clamp(10px, 1.6vw, 12px);
     line-height:1.6;
     color:#4d4f5c;
 }
 
 .btn-group{
-    margin-top:25px;
+    margin-top: clamp(10px, 2vw, 25px);
     display:flex;
-    gap:18px;
+    flex-wrap:wrap;
+    gap:12px;
 }
 
 .primary-btn{
     background:#6d28d9;
     color:#fff;
     border:none;
-    padding:16px 22px;
+    padding: clamp(10px, 1.8vw, 16px) clamp(14px, 2vw, 22px);
     border-radius:8px;
-    font-size:18px;
+    font-size: clamp(13px, 2vw, 18px);
     font-weight:700;
     cursor:pointer;
 }
@@ -240,9 +325,9 @@ body{
     background:#fff;
     color:#6d28d9;
     border:1px solid #6d28d9;
-    padding:16px 22px;
+    padding: clamp(10px, 1.8vw, 16px) clamp(14px, 2vw, 22px);
     border-radius:8px;
-    font-size:18px;
+    font-size: clamp(13px, 2vw, 18px);
     font-weight:700;
     cursor:pointer;
 }
@@ -269,6 +354,15 @@ body{
     right:20px;
 }
 
+@media (max-width: 600px){
+    .nav-btn{ width:36px; height:36px; font-size:15px; }
+    .prev{ left:8px; }
+    .next{ right:8px; }
+    .content-box1, .content-box2{ width:88%; }
+    .btn-group{ margin-top:10px; }
+    .primary-btn, .secondary-btn{ padding:10px 14px; }
+}
+
 /* section 2 */
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -281,23 +375,23 @@ body {
 
 /* ── SECTION ── */
 .courses-section {
-  width: 1280px;
-  min-height: 506.33px;
-  padding: 48px 28px;
+  width: 100%;
+  max-width: 1280px;
+  min-height: auto;
+  padding: clamp(28px, 5vw, 48px) clamp(16px, 4vw, 28px);
   background: #fff;
   margin: 0 auto;
   position: relative;
-  /* overflow hidden here hides the off-screen cards */
   overflow: hidden;
 }
 
 /* ── HEADING ── */
 .section-heading {
-  width: 248.42px;
-  height: 33.89px;
-  font-size: 22px;
+  width: auto;
+  height: auto;
+  font-size: clamp(18px, 2.4vw, 22px);
   font-weight: 700;
-  line-height: 33.89px;
+  line-height: 1.4;
   color: #1c1d1f;
   margin-bottom: 20px;
   white-space: nowrap;
@@ -309,7 +403,6 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  /* allow popups and arrows to overflow */
   overflow: visible;
 }
 
@@ -337,29 +430,35 @@ body {
 .arrow-left  { left: -18px; }
 .arrow-right { right: -18px; }
 
-/* ── CLIP ── */
-/* Clips overflowing cards but NOT popups (popups escape via JS absolute positioning) */
+/* ── CLIP / SCROLL TRACK ──
+   Native horizontal scroll-snap replaces the old fixed-pixel JS slider.
+   This is the key fix for responsiveness: no JS math about card widths,
+   the browser just scrolls and snaps at whatever size the cards render. */
 .slider-clip {
-  width: 1224px; /* 4 × 294 + 3 × 16 */
-  flex-shrink: 0;
-  overflow: hidden;
-  /* allow popup hover to work even when pointer drifts slightly outside clip */
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   position: relative;
 }
+.slider-clip::-webkit-scrollbar{ display:none; }
 
 /* ── TRACK ── */
 .slider-track {
   display: flex;
   gap: 16px;
-  will-change: transform;
-  /* width set by JS */
+  width: max-content !important;
 }
 
 /* ── CARD ── */
 .course-card {
   width: 294px;
   min-width: 294px;
-  height: 358.44px;
+  height: auto;
+  min-height: 358.44px;
   border: 18px solid #f1f3f5;
   background: #fff;
   position: relative;
@@ -369,6 +468,7 @@ body {
   z-index: 1;
   border-radius: 20px;
   border-style: solid;
+  scroll-snap-align: start;
 }
 .course-card:hover {
   box-shadow: 0 4px 20px rgba(0,0,0,0.18);
@@ -644,11 +744,16 @@ body {
 .price-now  { font-size: 15px; font-weight: 700; color: #1c1d1f; }
 .price-old  { font-size: 13px; color: #6a6f73; text-decoration: line-through; }
 
-/* ── POPUP ── */
-/* Popups are repositioned by JS; they escape clip via fixed-like stacking */
+/* ── POPUP ──
+   Hover-positioned info popups are a desktop-mouse pattern: they rely on
+   :hover and getBoundingClientRect() math sized for a 294px desktop card.
+   There is no reliable touch equivalent (no hover state, and tapping would
+   need to both open the popup AND navigate the card). Rather than ship a
+   broken half-working version, popups are disabled below the tablet
+   breakpoint and the card itself remains fully tappable. */
 .popup {
   display: none;
-  position: fixed; /* fixed so it escapes overflow:hidden on .courses-section */
+  position: fixed;
   width: 300px;
   background: #fff;
   border: 1px solid #d1d7dc;
@@ -743,6 +848,17 @@ body {
 }
 .popup-cta:hover { background: #6d28d9; }
 
+@media (max-width: 860px){
+  .popup{ display:none !important; }
+  .arrow-left{ left:-10px; }
+  .arrow-right{ right:-10px; }
+}
+
+@media (max-width: 700px){
+  .course-card{ width: 70vw; min-width: 220px; }
+  .arrow{ display:none; }
+}
+
 /* Section 3 */
 * {
   margin: 0;
@@ -754,11 +870,11 @@ body {
 }
 
 .trending {
-  width: 1280px;
-  max-width: 100%;
-  height: 425.83px;
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: clamp(28px, 5vw, 48px) clamp(16px, 4vw, 24px);
   background: #f7f9fa;
   font-family: 'Udemy Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Helvetica, Arial, sans-serif;
@@ -768,15 +884,15 @@ body {
 /* ---------- Header + divider ---------- */
 
 .trending__header {
-  width: 1232px;
-  height: 50.89px;
+  width: 100%;
+  height: auto;
   padding: 0 0 16px;
   border-bottom: 1px solid #d1d7dc;
 }
 
 .trending__heading {
-  font-size: 28px;
-  line-height: 33.89px;
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.2px;
 }
@@ -787,30 +903,29 @@ body {
   display: flex;
   margin-top: 32px;
   gap: 32px;
+  flex-wrap: wrap;
 }
 
 .topic-col {
   display: flex;
   flex-direction: column;
-  flex: 1 1 0;
+  flex: 1 1 220px;
   min-width: 0;
 }
 
-/* First column matches the exact spec size */
+/* First column matches the exact spec size on desktop only */
 .topic-col--ai {
-  width: 231.89px;
-  height: 246.94px;
-  flex: 0 0 231.89px;
+  flex: 1 1 220px;
 }
 
 /* Career Certifications needs more room for long titles */
 .topic-col--wide {
-  flex: 1.6 1 0;
+  flex: 1.6 1 260px;
 }
 
 .topic-col__title {
-  font-size: 22px;
-  line-height: 28px;
+  font-size: clamp(18px, 2.4vw, 22px);
+  line-height: 1.3;
   font-weight: 700;
   margin-bottom: 16px;
 }
@@ -825,8 +940,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: clamp(15px, 1.8vw, 18px);
+  line-height: 1.3;
   font-weight: 700;
   color: #5624d0;
   text-decoration: none;
@@ -849,8 +964,8 @@ body {
 
 .topic-item__learners {
   margin-top: 4px;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 15px;
+  line-height: 1.4;
   color: #595c73;
 }
 
@@ -868,7 +983,7 @@ body {
   border-radius: 4px;
   color: #5624d0;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   white-space: nowrap;
   overflow: visible;
@@ -894,38 +1009,36 @@ body {
 
 /* ---------- Responsive fallback ---------- */
 
-@media (max-width: 1280px) {
-  .trending,
-  .trending__header {
-    width: 100%;
-  }
-
-  .trending {
-    height: auto;
-  }
-}
-
 @media (max-width: 900px) {
   .trending__grid {
-    flex-wrap: wrap;
     row-gap: 24px;
   }
 
   .topic-col,
   .topic-col--ai,
   .topic-col--wide {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 560px) {
+  .trending__grid {
+    flex-direction: column;
+  }
+  .topic-col,
+  .topic-col--ai,
+  .topic-col--wide {
     flex: 1 1 100%;
     width: 100%;
-    height: auto;
   }
 }
 
 /* Section 4 */
 .pp-section {
-  width: 1280px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1280px;
   margin: 48px auto;
-  padding: 0 24px;
+  padding: 0 clamp(12px, 3vw, 24px);
   font-family: 'Udemy Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Helvetica, Arial, sans-serif;
 }
@@ -933,10 +1046,9 @@ body {
 /* ---------- Dark card ---------- */
 
 .pp-card {
-  width: 1232px;
-  max-width: 100%;
-  height: 577px;
-  padding: 48px 48px 6px;
+  width: 100%;
+  height: auto;
+  padding: clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) 6px;
   background: #181a2e;
   border-radius: 24px;
   overflow: hidden;
@@ -948,18 +1060,20 @@ body {
   align-items: flex-start;
   gap: 30px;
   height: 100%;
+  flex-wrap: wrap;
 }
 
 /* ---------- Text column ---------- */
 
 .pp-text {
   width: 454.4px;
-  flex: 0 0 454.4px;
+  flex: 1 1 380px;
+  min-width: 300px;
 }
 
 .pp-heading {
   color: #ffffff;
-  font-size: 32px;
+  font-size: clamp(22px, 3vw, 32px);
   line-height: 1.2;
   font-weight: 700;
   margin-bottom: 16px;
@@ -967,7 +1081,7 @@ body {
 
 .pp-subcopy {
   color: #c9cad6;
-  font-size: 16px;
+  font-size: clamp(14px, 1.6vw, 16px);
   line-height: 1.5;
   margin-bottom: 28px;
 }
@@ -1016,6 +1130,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .pp-btn {
@@ -1047,16 +1162,19 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  flex: 1 1 auto;
-  min-width: 0;
-  height: 100%;
+  flex: 1 1 480px;
+  min-width: 280px;
+  height: auto;
+  align-self: stretch;
   position: relative;
 }
 
 .pp-photo {
   width: 651px;
-  height: 465px;
-  flex: 0 0 651px;
+  max-width: 100%;
+  flex: 1 1 420px;
+  aspect-ratio: 651 / 465;
+  height: auto;
   border-radius: 16px;
   background: #e7e7e9;
   position: relative;
@@ -1112,8 +1230,7 @@ body {
 .pp-panel {
   flex: 0 0 auto;
   width: 160px;
-  height: 465px;
-  margin-right: -48px;
+  align-self: stretch;
   border-radius: 16px;
   background: linear-gradient(160deg, #6dd5fa 0%, #2980f0 55%, #5b3df0 100%);
   position: relative;
@@ -1143,48 +1260,32 @@ body {
 
 /* ---------- Responsive fallback ---------- */
 
-@media (max-width: 1280px) {
+@media (max-width: 1100px) {
   .pp-card {
-    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .pp-panel {
+    margin-right: 0;
+    width: 100px;
   }
 }
 
-@media (max-width: 1100px) {
-  .pp-card {
-    height: auto;
-    padding: 40px 32px;
-  }
-
+@media (max-width: 760px) {
   .pp-row {
     flex-wrap: wrap;
-    height: auto;
   }
 
   .pp-text {
     width: 100%;
     flex: 1 1 100%;
+    min-width: 0;
   }
 
   .pp-visual {
     width: 100%;
     flex: 1 1 100%;
-  }
-}
-
-@media (max-width: 760px) {
-  .pp-visual {
-    flex-direction: column;
-  }
-
-  .pp-photo,
-  .pp-panel {
-    width: 100%;
-    flex: 1 1 100%;
-  }
-
-  .pp-panel {
-    margin-right: 0;
-    height: 160px;
+    min-width: 0;
   }
 
   .pp-features {
@@ -1192,43 +1293,49 @@ body {
   }
 }
 
+@media (max-width: 520px){
+  .pp-visual{ flex-direction: column; }
+  .pp-photo{ width:100%; flex:1 1 auto; }
+  .pp-panel{ width:100%; height:90px; align-self:auto; }
+}
+
 /* Section 5 */
 .tl-section {
-  width: 1280px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 64px;
+  padding: clamp(32px, 6vw, 64px);
   background: #f7f9fa;
   font-family: 'Udemy Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Helvetica, Arial, sans-serif;
 }
 
 .tl-content {
-  width: 1152px;
-  max-width: 100%;
-  height: 100.56px;
+  width: 100%;
+  max-width: 1152px;
+  height: auto;
   margin: 0 auto;
 }
 
 .tl-heading {
-  width: 1152px;
-  max-width: 100%;
-  height: 28.56px;
+  width: 100%;
+  height: auto;
   margin: 0 0 24px;
-  font-size: 20px;
-  line-height: 28.56px;
+  font-size: clamp(15px, 2vw, 20px);
+  line-height: 1.4;
   font-weight: 500;
   color: #3a3f47;
   text-align: center;
 }
 
 .tl-logos {
-  width: 1152px;
-  max-width: 100%;
-  height: 48px;
+  width: 100%;
+  height: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 32px 40px;
 }
 
 .tl-logo {
@@ -1238,6 +1345,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.tl-logo img{
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* Placeholder mark — replace with the licensed <img>/<svg> logo asset.
@@ -1256,33 +1369,6 @@ body {
   letter-spacing: 0.3px;
   color: #6e7180;
   filter: grayscale(100%);
-}
-
-/* ---------- Responsive fallback ---------- */
-
-@media (max-width: 1280px) {
-  .tl-content,
-  .tl-heading,
-  .tl-logos {
-    width: 100%;
-  }
-}
-
-@media (max-width: 900px) {
-  .tl-section {
-    padding: 40px 24px;
-  }
-
-  .tl-content {
-    height: auto;
-  }
-
-  .tl-logos {
-    height: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px 40px;
-  }
 }
 
 /* Footer */
@@ -1324,16 +1410,17 @@ body {
 .ft-topbar__inner {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 48px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: clamp(20px, 5vw, 100px);
 }
 
 .ft-topbar__text {
   color: #ffffff;
-  font-size: 19px;
+  font-size: clamp(15px, 2.2vw, 19px);
   font-weight: 600;
 }
 
@@ -1344,7 +1431,14 @@ body {
 .ft-topbar__logos {
   display: flex;
   align-items: center;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 40px);
+}
+
+.ft-topbar__logos img{
+  height: 28px;
+  max-width: 110px;
+  object-fit: contain;
 }
 
 .ft-logo-placeholder {
@@ -1363,7 +1457,7 @@ body {
 
 .ft-megamenu {
   width: 100%;
-  padding: 48px 0 0;
+  padding: clamp(32px, 5vw, 48px) 0 0;
   background: #211e3a;
   padding-bottom: 19px;
 }
@@ -1371,20 +1465,22 @@ body {
 .ft-megamenu__inner {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 48px);
 }
 
 .ft-megamenu__heading {
   color: #ffffff;
-  font-size: 26px;
+  font-size: clamp(20px, 3vw, 26px);
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: clamp(24px, 4vw, 40px);
 }
 
 .ft-link-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 32px;
-  margin-bottom: 0.5px;
+  row-gap: 28px;
+  margin-bottom: 28px;
 }
 
 .ft-link-col ul {
@@ -1403,6 +1499,7 @@ body {
 .ft-lower__inner {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 48px);
 }
 
 .ft-link-row--lower {
@@ -1421,6 +1518,7 @@ body {
 .ft-bottombar__inner {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 48px);
   min-height: 83.2px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -1432,6 +1530,7 @@ body {
   align-items: center;
   gap: 20px;
   justify-self: start;
+  flex-wrap: wrap;
 }
 
 /* NOTE: placeholder for the official Udemy wordmark/icon asset */
@@ -1488,7 +1587,7 @@ body {
   .ft-bottombar__inner {
     grid-template-columns: 1fr;
     row-gap: 16px;
-    padding: 24px;
+    padding: 24px clamp(16px, 4vw, 48px);
   }
 
   .ft-bottombar__brand,
@@ -1500,36 +1599,37 @@ body {
 
 /* ── SECTION 6 ── */
 .section{
-  width:1280px;
-  padding:48px 28px;
-  padding-left: 260px;
-  
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 48px) clamp(16px, 4vw, 28px);
 }
- 
+
 /* ── HEADING ── */
 .section-heading{
-  font-size:22px;
+  font-size: clamp(18px, 2.4vw, 22px);
   font-weight:700;
   color:#1c1d1f;
   margin-bottom:16px;
-  height:33.89px;
-  line-height:33.89px;
+  height:auto;
+  line-height:1.4;
 }
- 
+
 /* ── TEAL BANNER ── */
 .banner{
   width:100%;
   border-radius:12px;
   background: linear-gradient(135deg, #006d77 0%, #004d5a 40%, #00636e 60%, #005060 100%);
-  padding:24px 24px 24px 20px;
+  padding: clamp(16px, 3vw, 24px) clamp(16px, 3vw, 24px) clamp(16px, 3vw, 24px) clamp(14px, 2.5vw, 20px);
   display:flex;
   align-items:stretch;
+  flex-wrap: wrap;
   gap:16px;
   position:relative;
   overflow:hidden;
   min-height:260px;
 }
- 
+
 /* Decorative teal geometric shape top-right */
 .banner::before{
   content:'';
@@ -1555,7 +1655,7 @@ body {
   border-radius:20px;
   pointer-events:none;
 }
- 
+
 /* ── FEATURED CARD ── */
 .featured-card{
   width:280px;
@@ -1570,7 +1670,7 @@ body {
   position:relative;
   z-index:2;
 }
- 
+
 .google-logo{
   display:flex;
   align-items:center;
@@ -1584,7 +1684,7 @@ body {
 .gl-g{ color:#4285F4; font-size:20px; font-weight:700; font-family:sans-serif; }
 .gl-l{ color:#34A853; font-size:20px; font-weight:700; font-family:sans-serif; }
 .gl-e{ color:#EA4335; font-size:20px; font-weight:700; font-family:sans-serif; }
- 
+
 .featured-title{
   font-size:18px;
   font-weight:700;
@@ -1598,7 +1698,7 @@ body {
   line-height:1.5;
   margin-bottom:14px;
 }
- 
+
 .featured-meta{
   display:flex;
   flex-wrap:wrap;
@@ -1618,7 +1718,7 @@ body {
   white-space:nowrap;
 }
 .meta-chip .star-icon{ color:#e59819; font-size:12px; }
- 
+
 .btn-learn-more{
   width:100%;
   height:44px;
@@ -1634,31 +1734,38 @@ body {
 .btn-learn-more:hover{
   background:#f3f0ff;
 }
- 
+
 /* ── COURSE CARDS WRAPPER ── */
 .courses-wrapper{
-  flex:1;
+  flex:1 1 320px;
   position:relative;
   display:flex;
   align-items:center;
   z-index:2;
   min-width:0;
 }
- 
+
+/* Native scroll-snap (replaces fixed-pixel JS translateX slider) */
 .courses-clip{
-  overflow:hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   width:100%;
   height:100%;
   display:flex;
   align-items:center;
 }
- 
+.courses-clip::-webkit-scrollbar{ display:none; }
+
 .courses-track{
   display:flex;
   gap:12px;
-  transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  width: max-content !important;
 }
- 
+
 /* ── COURSE CARD ── */
 .course-card{
   width:196px;
@@ -1671,9 +1778,10 @@ body {
   flex-direction:column;
   cursor:pointer;
   transition:box-shadow .2s;
+  scroll-snap-align: start;
 }
 .course-card:hover{ box-shadow:0 4px 16px rgba(0,0,0,0.18); }
- 
+
 /* Thumbnail */
 .course-thumb{
   width:100%;
@@ -1682,7 +1790,7 @@ body {
   overflow:hidden;
   flex-shrink:0;
 }
- 
+
 /* Blue gradient + person placeholder thumbnails */
 .thumb-base{
   width:100%;
@@ -1690,7 +1798,7 @@ body {
   background:linear-gradient(135deg,#1a73e8 0%,#4285f4 40%,#1558d6 100%);
   position:relative;
 }
- 
+
 /* Person silhouettes per card */
 .person-sil{
   position:absolute;
@@ -1717,7 +1825,7 @@ body {
   height:65px;
   border-radius:40px 40px 0 0;
 }
- 
+
 .ps1::before{ background:#d4956a; }
 .ps1::after { background:#7b3f1e; }
 .ps2::before{ background:#c8a070; }
@@ -1726,7 +1834,7 @@ body {
 .ps3::after { background:#c0785a; }
 .ps4::before{ background:#b87850; }
 .ps4::after { background:#8b2222; }
- 
+
 /* "Created by Google" bar */
 .created-bar{
   position:absolute;
@@ -1746,7 +1854,7 @@ body {
   height:14px;
   flex-shrink:0;
 }
- 
+
 /* Google "G" icon SVG inline */
 .g-badge{
   position:absolute;
@@ -1765,7 +1873,7 @@ body {
   font-family:sans-serif;
 }
 .g-badge span{ background:linear-gradient(135deg,#4285F4,#EA4335,#FBBC05,#34A853); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
- 
+
 /* Card body */
 .course-body{
   padding:10px 12px 12px;
@@ -1794,7 +1902,7 @@ body {
   color:#1c1d1f;
   white-space:nowrap;
 }
- 
+
 /* ── ARROW ── */
 .arrow-right{
   position:absolute;
@@ -1818,3 +1926,14 @@ body {
 .arrow-right:hover{ background:#f7f9fa; }
 .arrow-right svg{ width:16px;height:16px;color:#1c1d1f; }
 .arrow-right.hidden{ opacity:0;pointer-events:none; }
+
+@media (max-width: 900px){
+  .banner{ flex-direction:column; align-items:stretch; }
+  .featured-card{ width:100%; min-width:0; }
+  .courses-wrapper{ width:100%; }
+  .arrow-right{ display:none; }
+}
+
+@media (max-width: 480px){
+  .course-card{ width: 60vw; min-width: 160px; }
+}

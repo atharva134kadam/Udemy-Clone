@@ -13,7 +13,11 @@
 
 <body>
 <!-- navbar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+        </button>
 
         <div class="logo">
             <a href="index.html"><img src="https://frontends.udemycdn.com/frontends-homepage/staticx/udemy/images/v7/logo-udemy.svg"
@@ -1004,6 +1008,16 @@
   </footer>
 </body>
 <script>
+// Mobile nav toggle
+(function(){
+  const navbar = document.getElementById('navbar');
+  const toggle = document.getElementById('navToggle');
+  toggle.addEventListener('click', () => {
+    const open = navbar.classList.toggle('nav-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+
 // Section 1
 const slides = document.querySelectorAll(".slide");
 const next = document.querySelector(".next");
@@ -1031,25 +1045,17 @@ setInterval(() => {
     showSlide(index);
 }, 5000);
 
-// Section 2
+// Section 2 — native scroll-snap carousel.
+// No fixed pixel math: arrows scroll by the clip's own visible width,
+// so this works correctly at any viewport/card size without a resize listener.
 (function () {
-  const track      = document.getElementById('sliderTrack');
   const clip       = document.getElementById('sliderClip');
+  const track      = document.getElementById('sliderTrack');
   const arrowLeft  = document.getElementById('arrowLeft');
   const arrowRight = document.getElementById('arrowRight');
+  const cards      = Array.from(track.querySelectorAll('.course-card'));
 
-  const CARDS_PER_PAGE = 4;
-  const CARD_W  = 294;
-  const GAP     = 16;
-  const STEP    = (CARD_W + GAP) * CARDS_PER_PAGE;  // 1240px
-
-  const cards     = Array.from(track.querySelectorAll('.course-card'));
-  const TOTAL     = cards.length;  // 8
-  const MAX_PAGE  = Math.ceil(TOTAL / CARDS_PER_PAGE) - 1;  // 1
-
-  let page = 0;
-
-  /* ── Add caret elements to each popup ── */
+  /* ── Add caret elements to each popup (desktop only) ── */
   cards.forEach(card => {
     const popup = card.querySelector('.popup');
     if (!popup) return;
@@ -1061,31 +1067,32 @@ setInterval(() => {
     popup.appendChild(caretR);
   });
 
-  /* ── Position popup using fixed coords ── */
+  function isDesktop() {
+    return window.matchMedia('(min-width: 861px)').matches && window.matchMedia('(hover: hover)').matches;
+  }
+
+  /* ── Position popup using fixed coords (desktop hover only) ── */
   function positionPopup(card) {
+    if (!isDesktop()) return;
     const popup = card.querySelector('.popup');
     if (!popup) return;
 
-    const rect     = card.getBoundingClientRect();
-    const popupW   = 300;
-    const margin   = 10;
+    const rect    = card.getBoundingClientRect();
+    const popupW  = 300;
+    const margin  = 10;
+    const clipRect = clip.getBoundingClientRect();
 
-    // Determine which side based on current page visible window
-    const firstVisible = page * CARDS_PER_PAGE;
-    const lastVisible  = firstVisible + CARDS_PER_PAGE - 1;
-    const cardIndex    = parseInt(card.dataset.index, 10);
-    const isLastInRow  = cardIndex === lastVisible;
+    const spaceRight = clipRect.right - rect.right;
+    const openLeft   = spaceRight < (popupW + margin);
 
     const caretL = popup.querySelector('.popup-caret-left');
     const caretR = popup.querySelector('.popup-caret-right');
 
-    if (isLastInRow) {
-      // Open to the LEFT
+    if (openLeft) {
       popup.style.left = (rect.left - popupW - margin) + 'px';
       if (caretL) caretL.style.display = 'none';
       if (caretR) caretR.style.display = 'block';
     } else {
-      // Open to the RIGHT
       popup.style.left = (rect.right + margin) + 'px';
       if (caretL) caretL.style.display = 'block';
       if (caretR) caretR.style.display = 'none';
@@ -1093,7 +1100,6 @@ setInterval(() => {
 
     popup.style.top = rect.top + 'px';
 
-    // Clamp vertically so popup doesn't go below viewport
     const popupH = popup.offsetHeight || 340;
     const maxTop = window.innerHeight - popupH - 10;
     if (rect.top > maxTop) {
@@ -1101,80 +1107,48 @@ setInterval(() => {
     }
   }
 
-  /* ── Attach hover listeners ── */
   cards.forEach(card => {
     card.addEventListener('mouseenter', () => positionPopup(card));
     card.addEventListener('mousemove',  () => positionPopup(card));
   });
 
-  /* ── Render: slide + arrows ── */
-  function render(animate) {
-    const offset = page * STEP;
-    if (animate === false) {
-      track.style.transition = 'none';
-    } else {
-      track.style.transition = 'transform 0.4s cubic-bezier(0.4,0,0.2,1)';
-    }
-    track.style.transform = `translateX(-${offset}px)`;
-
-    arrowLeft.classList.toggle('hidden', page === 0);
-    arrowRight.classList.toggle('hidden', page >= MAX_PAGE);
+  /* ── Arrow scroll, sized to whatever is currently visible ── */
+  function updateArrows() {
+    const max = track.scrollWidth - clip.clientWidth - 1;
+    arrowLeft.classList.toggle('hidden', clip.scrollLeft <= 0);
+    arrowRight.classList.toggle('hidden', clip.scrollLeft >= max);
   }
 
-  /* ── Arrow clicks ── */
   arrowRight.addEventListener('click', () => {
-    if (page < MAX_PAGE) { page++; render(); }
+    clip.scrollBy({ left: clip.clientWidth, behavior: 'smooth' });
   });
   arrowLeft.addEventListener('click', () => {
-    if (page > 0) { page--; render(); }
+    clip.scrollBy({ left: -clip.clientWidth, behavior: 'smooth' });
   });
 
-  /* ── Keyboard ── */
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') arrowRight.click();
-    if (e.key === 'ArrowLeft')  arrowLeft.click();
-  });
-
-  /* ── Init ── */
-  // Set track total width to hold all 8 cards
-  track.style.width    = `${TOTAL * CARD_W + (TOTAL - 1) * GAP}px`;
-  track.style.minWidth = track.style.width;
-
-  render(false);
+  clip.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
 })();
 
-// Section 6
+// Section 6 — native scroll-snap carousel.
 (function(){
-  const track      = document.getElementById('coursesTrack');
   const clip       = document.getElementById('coursesClip');
+  const track      = document.getElementById('coursesTrack');
   const arrowRight = document.getElementById('arrowRight');
- 
-  const CARD_W  = 196;
-  const GAP     = 12;
-  const VISIBLE = 4;
-  const STEP    = (CARD_W + GAP) * VISIBLE; // 832px
- 
-  const cards    = track.querySelectorAll('.course-card');
-  const TOTAL    = cards.length; // 7
-  const MAX_OFF  = (TOTAL - VISIBLE) * (CARD_W + GAP);
- 
-  let offset = 0;
- 
-  function render(){
-    track.style.transform  = `translateX(-${offset}px)`;
-    track.style.transition = 'transform 0.4s cubic-bezier(0.4,0,0.2,1)';
-    arrowRight.classList.toggle('hidden', offset >= MAX_OFF);
+
+  function updateArrow() {
+    const max = track.scrollWidth - clip.clientWidth - 1;
+    arrowRight.classList.toggle('hidden', clip.scrollLeft >= max);
   }
- 
+
   arrowRight.addEventListener('click', () => {
-    offset = Math.min(offset + STEP, MAX_OFF);
-    render();
+    clip.scrollBy({ left: clip.clientWidth, behavior: 'smooth' });
   });
- 
-  // Set track total width
-  track.style.width = `${TOTAL * CARD_W + (TOTAL - 1) * GAP}px`;
- 
-  render();
+
+  clip.addEventListener('scroll', updateArrow, { passive: true });
+  window.addEventListener('resize', updateArrow);
+  updateArrow();
 })();
 </script>
 </html>
