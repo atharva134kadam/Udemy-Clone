@@ -7,6 +7,7 @@
 
 body{
     background:#fff;
+    overflow-x:hidden;
 }
 
 .navbar{
@@ -16,7 +17,34 @@ body{
     padding:0 28px;
     gap:30px;
     border-bottom:1px solid #e8e8e8;
+    position:relative;
 }
+
+/* Hamburger (mobile only) */
+.nav-toggle{
+    display:none;
+    width:40px;
+    height:40px;
+    border:1px solid #6d28d9;
+    border-radius:10px;
+    background:#fff;
+    cursor:pointer;
+    flex-shrink:0;
+    align-items:center;
+    justify-content:center;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after{
+    content:"";
+    display:block;
+    width:18px;
+    height:2px;
+    background:#2d2f31;
+    position:relative;
+}
+.nav-toggle span::before{ position:absolute; top:-6px; }
+.nav-toggle span::after{ position:absolute; top:6px; }
 
 /* Logo */
 
@@ -49,6 +77,7 @@ body{
 .search-box{
     flex:1;
     max-width:870px;
+    min-width:0;
     height: 50px;
     border:1px solid #8f8fb0;
     border-radius:999px;
@@ -61,10 +90,12 @@ body{
 .search-box i{
     color:#93979d;
     font-size:18px;
+    flex-shrink:0;
 }
 
 .search-box input{
     width:100%;
+    min-width:0;
     border:none;
     outline:none;
     font-size:14px;
@@ -113,6 +144,7 @@ body{
     font-size:14px;
     font-weight:700;
     cursor:pointer;
+    white-space:nowrap;
 }
 
 .signup-btn{
@@ -125,7 +157,7 @@ body{
     font-size: 14px;
     font-weight:700;
     cursor:pointer;
-    
+    white-space:nowrap;
 }
 
 .lang-btn{
@@ -137,50 +169,102 @@ body{
     border-radius:10px;
     font-size:18px;
     cursor:pointer;
+    flex-shrink:0;
 }
 
 .right-actions{
     display:flex;
     align-items:center;
     gap:8px;
+    flex-shrink:0;
 }
 
-/* img section */
+/* ============================================================
+   NAVBAR RESPONSIVE (same pattern as index.html)
+   ============================================================ */
+@media (max-width: 1100px){
+    .navbar{ gap:16px; padding:0 20px; }
+    .right-links{ display:none; }
+}
+
+@media (max-width: 860px){
+    .navbar{ flex-wrap:wrap; height:auto; padding:12px 16px; row-gap:12px; }
+    .nav-toggle{ display:flex; order:1; }
+    .logo{ order:2; }
+    .logo img{ width:92px; }
+    .right-actions{ order:3; margin-left:auto; }
+    .search-box{ order:5; flex:1 1 100%; max-width:none; height:44px; }
+    .nav-links{
+        order:4;
+        flex:1 1 100%;
+        flex-direction:column;
+        gap:0;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height .25s ease;
+    }
+    .navbar.nav-open .nav-links{ max-height:220px; }
+    .nav-links li{ border-top:1px solid #f0f0f0; }
+    .nav-links a{ display:block; padding:12px 4px; }
+    .right-links{
+        display:flex;
+        order:6;
+        flex:1 1 100%;
+        flex-direction:column;
+        gap:0;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height .25s ease;
+    }
+    .navbar.nav-open .right-links{ max-height:120px; margin-top:4px; }
+    .right-links a{ display:block; padding:10px 4px; border-top:1px solid #f0f0f0; }
+}
+
+@media (max-width: 480px){
+    .signup-btn{ padding:0 14px; font-size:13px; }
+    .login-btn{ padding:0 14px; font-size:13px; }
+    .cart{ display:none; }
+}
+
+/* ============================================================
+   img section (hero)
+   ============================================================ */
 .section{
   width:100%;
-  height:600px;
+  min-height: clamp(420px, 60vw, 600px);
+  height:auto;
   background:#f0f0f0;
   position:relative;
   overflow:hidden;
   display:flex;
   align-items:center;
 }
- 
-/* ── PHOTO (right half, full height) ── */
+
+/* ── PHOTO (full bleed background) ── */
 .photo{
   position:absolute;
   right:0;
   top:0;
   width:100%;
   height:100%;
-  /* CSS-drawn instructor photo placeholder */
   background:linear-gradient(160deg, #e8e0d8 0%, #d8d0c8 30%, #c8c0b8 60%, #e0d8d0 100%);
   overflow:hidden;
 }
- 
-/* gradient fade on left edge to blend into bg */
+
+/* Fade zone scales with the content column (see --content-fade-w) so the
+   dark heading text always sits over the lightened area, instead of a
+   fixed 180px region that stops matching once the text column is fluid. */
 .photo::before{
   content:'';
   position:absolute;
   left:0;
   top:0;
-  width:180px;
+  width: var(--content-fade-w, 180px);
   height:100%;
   background:linear-gradient(to right, #f0f0f0, transparent);
   z-index:2;
 }
- 
-/* Person silhouette */
+
 .photo-inner{
   position:absolute;
   inset:0;
@@ -191,40 +275,38 @@ body{
 
 /* ── TEXT SIDE ── */
 .content{
+  --content-fade-w: clamp(220px, 32vw, 480px);
   position:relative;
   z-index:10;
-  padding-left:300px;
+  padding-left: clamp(20px, 7vw, 300px);
+  padding-right: 20px;
   display:flex;
   flex-direction:column;
   gap:0;
 }
- 
+
 .heading{
-  width:320px;
-  height:106.08px;
-  font-size:52px;
+  width:min(320px, 80vw);
+  height:auto;
+  font-size: clamp(30px, 5vw, 52px);
   font-weight:800;
   color:#1c1d1f;
   line-height:1.2;
   margin-bottom:16px;
-  display:flex;
-  align-items:center;
 }
- 
+
 .subtext{
-  width:320px;
-  height:53.55px;
-  font-size:18px;
+  width:min(320px, 80vw);
+  height:auto;
+  font-size: clamp(15px, 1.6vw, 18px);
   color:#1c1d1f;
   line-height:1.6;
   margin-bottom:28px;
-  display:flex;
-  align-items:center;
 }
- 
+
 .btn-get-started{
-  width:320px;
-  height:38px;
+  width:min(320px, 80vw);
+  height:44px;
   background:#7c3aed;
   color:#fff;
   border:none;
@@ -237,50 +319,61 @@ body{
 }
 .btn-get-started:hover{ background:#6d28d9; }
 
-/* ── SECTION 2── */
+@media (max-width: 600px){
+  /* Below this width the fluid fade can't keep pace with viewport text
+     wrapping reliably, so add a light scrim across the full photo instead
+     of relying on the left-edge fade for legibility. */
+  .photo::before{
+    width:100%;
+    background:linear-gradient(to right, rgba(240,240,240,0.92), rgba(240,240,240,0.55) 60%, rgba(240,240,240,0.25));
+  }
+  .content{ padding-left:20px; }
+}
+
+/* ============================================================
+   SECTION 2 — "So many reasons to start"
+   ============================================================ */
 .section2{
   width:100%;
-  height:487.84px;
-  padding:88px 24px;
+  height:auto;
+  padding: clamp(40px, 8vw, 88px) 24px;
   background:#fff;
   display:flex;
   flex-direction:column;
   align-items:center;
 }
- 
-/* ── HEADING ── */
+
 .section-heading2{
-  font-size: 50px;
+  font-size: clamp(26px, 4.5vw, 50px);
   font-weight:600;
   color:#1c1d1f;
   text-align:center;
-  margin-bottom:52px;
+  margin-bottom: clamp(28px, 5vw, 52px);
   line-height:1.2;
 }
- 
-/* ── GRID ── */
+
 .grid{
   display:flex;
+  flex-wrap:wrap;
   align-items:flex-start;
   justify-content:center;
-  gap:0;
+  gap: 32px 0;
   width:100%;
   max-width:1232px;
 }
- 
-/* ── ITEM ── */
+
 .item2{
   width:435px;
-  height:218.2px;
+  flex: 1 1 280px;
+  max-width:380px;
+  height:auto;
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
   padding:0 24px;
 }
- 
 
-/* ── IMAGE SLOT ── */
 .img-slot2{
   width:120px;
   height:100px;
@@ -303,16 +396,14 @@ body{
   font-size:12px;
   font-style:italic;
 }
- 
-/* ── ITEM TITLE ── */
+
 .item-title{
   font-size:18px;
   font-weight:700;
   color:#1c1d1f;
   margin-bottom:10px;
 }
- 
-/* ── ITEM DESC ── */
+
 .item-desc{
   font-size:14px;
   color:#92959a;
@@ -320,80 +411,96 @@ body{
   max-width:292px;
 }
 
-/* ── SECTION 3── */
+/* ============================================================
+   SECTION 3 — stat strip
+   ============================================================ */
 .section3{
   width:100%;
-  height:199.23px;
-  padding:48px 0;
+  height:auto;
+  padding: clamp(28px, 5vw, 48px) 0;
   background:#4a2fcc;
   display:flex;
   align-items:center;
   justify-content:center;
 }
- 
-/* ── INNER ── */
+
 .inner3{
   width:100%;
   max-width:1232px;
-  padding:0 8px;
+  padding:0 24px;
   display:flex;
+  flex-wrap:wrap;
   align-items:center;
-  justify-content:space-between;
+  justify-content:center;
+  gap: 28px clamp(20px, 4vw, 48px);
 }
- 
-/* ── STAT ITEM ── */
+
 .stat{
   display:flex;
   flex-direction:column;
   gap:6px;
+  align-items:center;
+  text-align:center;
+  min-width: 110px;
 }
- 
+
 .stat-number{
-  font-size:45px;
+  font-size: clamp(28px, 4vw, 45px);
   font-weight:800;
   color:#fff;
   line-height:1;
   letter-spacing:-0.5px;
 }
- 
+
 .stat-label{
-  font-size:15px;
+  font-size:14px;
   font-weight:400;
   color:#fff;
   opacity:0.85;
-  line-height:1;
+  line-height:1.3;
+  white-space:nowrap;
 }
 
-/* ── SECTION 4── */
+@media (min-width: 900px){
+  /* Restore the original edge-to-edge spread once there's room for it
+     without wrapping or squeezing labels. */
+  .inner3{ justify-content:space-between; flex-wrap:nowrap; }
+}
+
+/* ============================================================
+   SECTION 4 — support block
+   The 450 + 450 + 650 = 1550px fixed-width math never fit the 1232px
+   inner column even on desktop; rebuilt with fluid widths that actually
+   sum to the container instead of relying on flex-shrink to paper over it.
+   ============================================================ */
 .section4{
   width:100%;
-  height:764.73px;
+  height:auto;
   background:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
   position:relative;
   overflow:hidden;
-  padding-right: 280px;
-  padding-bottom: 50x;
+  padding: clamp(48px, 8vw, 96px) 24px;
 }
- 
-/* ── LAYOUT ── */
+
 .inner4{
   width:100%;
   max-width:1280px;
   padding:0 24px;
   display:flex;
+  flex-wrap:wrap;
   align-items:center;
-  justify-content:space-between;
-  gap:0;
+  justify-content:center;
+  gap: 32px;
 }
- 
-/* ── IMAGE SLOTS ── */
+
 .img-slot4{
-  width:450px;
-  height:450px;
-  flex-shrink:0;
+  width: clamp(160px, 24vw, 360px);
+  aspect-ratio: 1 / 1;
+  height:auto;
+  flex:0 1 auto;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -401,38 +508,41 @@ body{
   overflow:visible;
 }
 
-.img-slot-left{
-  align-self:flex-end;
-  margin-bottom:-40px;
-}
- 
-/* Right image overflows slightly downward */
+.img-slot-left,
 .img-slot-right{
   align-self:flex-end;
-  margin-bottom:-40px;
+  margin-bottom:0;
 }
- 
-/* ── TEXT BLOCK ── */
+
 .text-block{
-  width:650px;
-  height:224.73px;
+  width:min(650px, 100%);
+  flex: 1 1 380px;
+  height:auto;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   text-align:center;
-  flex-shrink:0;
   gap:0;
+  order: -1;
 }
- 
+
+@media (min-width: 1100px){
+  /* At full desktop width there is room to keep the original left-image,
+     text, right-image order with the images dropped slightly below the
+     text baseline, matching the original intent. */
+  .text-block{ order:0; }
+  .img-slot-left, .img-slot-right{ margin-bottom:-40px; }
+}
+
 .block-heading{
-  font-size:42px;
+  font-size: clamp(26px, 3.6vw, 42px);
   font-weight:700;
   color:#1c1d1f;
   line-height:1.25;
   margin-bottom:18px;
 }
- 
+
 .block-desc{
   font-size:15px;
   color:#7c7f84;
@@ -440,12 +550,12 @@ body{
   margin-bottom:20px;
   max-width:520px;
 }
- 
+
 .block-desc strong{
   font-weight:700;
   color:#1c1d1f;
 }
- 
+
 .block-link{
   font-size:14px;
   font-weight:700;
@@ -459,18 +569,19 @@ body{
 }
 .block-link:hover{ color:#6d28d9; }
 
-/* ── SECTION 5── */
+/* ============================================================
+   SECTION 5 — CTA
+   ============================================================ */
 .section5{
   width:100%;
-  height:267.16px;
-  padding:88px 24px;
+  height:auto;
+  padding: clamp(48px, 8vw, 88px) 24px;
   background:#f5f5f7;
   display:flex;
   align-items:center;
   justify-content:center;
 }
- 
-/* ── INNER ── */
+
 .inner5{
   display:flex;
   flex-direction:column;
@@ -479,17 +590,15 @@ body{
   text-align:center;
   gap:0;
 }
- 
-/* ── HEADING ── */
+
 .heading5{
-  font-size:34px;
+  font-size: clamp(24px, 3.6vw, 34px);
   font-weight:700;
   color:#1c1d1f;
   line-height:1.25;
   margin-bottom:14px;
 }
- 
-/* ── SUBTEXT ── */
+
 .subtext5{
   font-size:16px;
   color:#4a4a5a;
@@ -497,10 +606,9 @@ body{
   margin-bottom:28px;
   max-width:420px;
 }
- 
-/* ── BUTTON ── */
+
 .btn5{
-  width:360px;
+  width:min(360px, 86vw);
   height:52px;
   background:#7c3aed;
   color:#fff;
@@ -512,9 +620,11 @@ body{
   letter-spacing:0.01em;
   transition:background .15s;
 }
-.btn:hover{ background:#6d28d9; }
+.btn5:hover{ background:#6d28d9; }
 
-/* Footer */
+/* ============================================================
+   Footer (same fluid treatment as the homepage, for consistency)
+   ============================================================ */
 .ft {
   width: 100%;
   font-family: 'Udemy Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -541,8 +651,6 @@ body{
   margin-bottom: 12px;
 }
 
-/* ---------- A: Top bar ---------- */
-
 .ft-topbar {
   width: 100%;
   padding: 19px 0;
@@ -553,16 +661,17 @@ body{
 .ft-topbar__inner {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 48px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: clamp(20px, 5vw, 100px);
 }
 
 .ft-topbar__text {
   color: #ffffff;
-  font-size: 19px;
+  font-size: clamp(15px, 2.2vw, 19px);
   font-weight: 600;
 }
 
@@ -573,7 +682,14 @@ body{
 .ft-topbar__logos {
   display: flex;
   align-items: center;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 40px);
+}
+
+.ft-topbar__logos img{
+  height: 28px;
+  max-width: 110px;
+  object-fit: contain;
 }
 
 .ft-logo-placeholder {
@@ -588,11 +704,9 @@ body{
   filter: grayscale(100%);
 }
 
-/* ---------- B: Mega menu ---------- */
-
 .ft-megamenu {
   width: 100%;
-  padding: 48px 0 0;
+  padding: clamp(32px, 5vw, 48px) 0 0;
   background: #211e3a;
   padding-bottom: 19px;
 }
@@ -600,27 +714,27 @@ body{
 .ft-megamenu__inner {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 48px);
 }
 
 .ft-megamenu__heading {
   color: #ffffff;
-  font-size: 26px;
+  font-size: clamp(20px, 3vw, 26px);
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: clamp(24px, 4vw, 40px);
 }
 
 .ft-link-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 32px;
-  margin-bottom: 0.5px;
+  row-gap: 28px;
+  margin-bottom: 28px;
 }
 
 .ft-link-col ul {
   list-style: none;
 }
-
-/* ---------- C: Lower footer ---------- */
 
 .ft-lower {
   width: 100%;
@@ -632,13 +746,12 @@ body{
 .ft-lower__inner {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 48px);
 }
 
 .ft-link-row--lower {
   margin-bottom: 0;
 }
-
-/* ---------- D: Bottom bar ---------- */
 
 .ft-bottombar {
   width: 100%;
@@ -650,6 +763,7 @@ body{
 .ft-bottombar__inner {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 48px);
   min-height: 83.2px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -661,9 +775,9 @@ body{
   align-items: center;
   gap: 20px;
   justify-self: start;
+  flex-wrap: wrap;
 }
 
-/* NOTE: placeholder for the official Udemy wordmark/icon asset */
 .ft-udemy-placeholder {
   color: #ffffff;
   font-size: 22px;
@@ -695,8 +809,6 @@ body{
   font-size: 15px;
 }
 
-/* ---------- Responsive fallback ---------- */
-
 @media (max-width: 1024px) {
   .ft-link-row {
     grid-template-columns: repeat(2, 1fr);
@@ -717,7 +829,7 @@ body{
   .ft-bottombar__inner {
     grid-template-columns: 1fr;
     row-gap: 16px;
-    padding: 24px;
+    padding: 24px clamp(16px, 4vw, 48px);
   }
 
   .ft-bottombar__brand,

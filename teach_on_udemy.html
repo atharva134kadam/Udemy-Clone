@@ -13,7 +13,11 @@
 
 <body>
 <!-- navbar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+        </button>
 
         <div class="logo">
             <a href="index.html"><img src="https://frontends.udemycdn.com/frontends-homepage/staticx/udemy/images/v7/logo-udemy.svg"
@@ -23,7 +27,7 @@
         <ul class="nav-links">
             <li><a href="#">Find Courses</a></li>
             <li><a href="#">Get Certified</a></li>
-            <li><a href="#">Subscribe</a></li>
+            <li><a href="subscribe.html">Subscribe</a></li>
         </ul>
 
         <div class="search-box">
@@ -369,5 +373,17 @@
     </div>
  
   </footer>
+
+  <script>
+  // Mobile nav toggle (same pattern as index.html)
+  (function(){
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navToggle');
+    toggle.addEventListener('click', () => {
+      const open = navbar.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+  </script>
 </body>
 </html>
