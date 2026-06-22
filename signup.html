@@ -1,488 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Udemy Navbar Clone</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <link rel="stylesheet" href="login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Udemy – Sign Up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="login.css">
 </head>
-
 <body>
-<!-- navbar -->
-    <nav class="navbar">
 
-        <div class="logo">
-            <a href="index.html"><img src="https://frontends.udemycdn.com/frontends-homepage/staticx/udemy/images/v7/logo-udemy.svg"
-                alt="Udemy"></a>
-        </div>
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="https://frontends.udemycdn.com/frontends-homepage/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy">
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Find Courses</a></li>
+    <li><a href="#">Get Certified</a></li>
+    <li><a href="subscribe.html">Subscribe</a></li>
+  </ul>
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" placeholder="Search for anything">
+  </div>
+  <div class="right-links">
+    <a href="#">Udemy Business</a>
+    <a href="teach_on_udemy.html">Teach on Udemy</a>
+  </div>
+  <div class="cart"><i class="fa-solid fa-cart-shopping"></i></div>
+  <div class="right-actions">
+    <button class="login-btn"><a href="login.html">Log in</a></button>
+    <button class="signup-btn"><a href="signup.html">Sign Up</a></button>
+    <button class="lang-btn"><i class="fa-solid fa-globe"></i></button>
+  </div>
+  <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
 
-        <ul class="nav-links">
-            <li><a href="#">Find Courses</a></li>
-            <li><a href="#">Get Certified</a></li>
-            <li><a href="subscribe.html">Subscribe</a></li>
-        </ul>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#">Find Courses</a>
+  <a href="#">Get Certified</a>
+  <a href="subscribe.html">Subscribe</a>
+  <a href="#">Udemy Business</a>
+  <a href="teach_on_udemy.html">Teach on Udemy</a>
+  <div class="nav-mobile-actions">
+    <button class="login-btn"><a href="login.html">Log in</a></button>
+    <button class="signup-btn"><a href="signup.html">Sign Up</a></button>
+  </div>
+</div>
 
-        <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search for anything">
-        </div>
-
-        <div class="right-links">
-            <a href="#">Udemy Business</a>
-            <a href="teach_on_udemy.html">Teach on Udemy</a>
-        </div>
-
-        <div class="cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-        </div>
-
-        <div class="right-actions">
-        <button class="login-btn"><a href="login.html">Log in</a></button>
-
-        <button class="signup-btn"><a href="signup.html">SignUp</a></button>
-
-        <button class="lang-btn">
-            <i class="fa-solid fa-globe"></i>
-        </button>
-        </div>
-
-    </nav>
-
-    <!-- Signup -->
+<!-- ── SIGNUP ── -->
 <div class="main">
   <div class="inner">
- 
-    <!-- ── ILLUSTRATION ── -->
+
+    <!-- Illustration -->
     <div class="illus-side">
       <svg class="illus-svg" viewBox="0 0 608 689" fill="none" xmlns="http://www.w3.org/2000/svg">
- 
-        <!-- Large circle background -->
         <circle cx="370" cy="320" r="268" fill="#fff" stroke="#1c1d1f" stroke-width="2.5"/>
- 
-        <!-- ══ FLOATING ICONS INSIDE CIRCLE ══ -->
- 
-        <!-- Globe icon top-left of circle -->
-        <g transform="translate(228,105)">
-          <rect width="54" height="54" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/>
-          <circle cx="27" cy="27" r="14" stroke="#1c1d1f" stroke-width="1.8" fill="none"/>
-          <ellipse cx="27" cy="27" rx="7" ry="14" stroke="#1c1d1f" stroke-width="1.8" fill="none"/>
-          <line x1="13" y1="27" x2="41" y2="27" stroke="#1c1d1f" stroke-width="1.5"/>
-          <text x="42" y="12" font-size="10" fill="#1c1d1f" font-family="sans-serif">★</text>
-          <text x="10" y="14" font-size="9" fill="#1c1d1f" font-family="sans-serif">A</text>
-        </g>
- 
-        <!-- Camera icon -->
-        <g transform="translate(358,88)">
-          <rect width="46" height="38" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/>
-          <circle cx="23" cy="20" r="9" stroke="#1c1d1f" stroke-width="1.8" fill="none"/>
-          <rect x="14" y="6" width="10" height="7" rx="2" fill="#1c1d1f"/>
-        </g>
- 
-        <!-- Email / @ card -->
-        <g transform="translate(196,240)">
-          <rect width="76" height="64" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/>
-          <text x="38" y="40" font-size="26" text-anchor="middle" fill="#1c1d1f" font-family="sans-serif">@</text>
-        </g>
- 
-        <!-- Shapes card (triangle circle diamond) -->
-        <g transform="translate(205,370)">
-          <rect width="120" height="52" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/>
-          <!-- triangle -->
-          <polygon points="28,38 18,46 38,46" fill="none" stroke="#1c1d1f" stroke-width="2"/>
-          <!-- circle -->
-          <circle cx="60" cy="40" r="9" fill="none" stroke="#1c1d1f" stroke-width="2"/>
-          <!-- diamond -->
-          <polygon points="94,30 103,40 94,50 85,40" fill="none" stroke="#1c1d1f" stroke-width="2"/>
-        </g>
- 
-        <!-- Code / bracket icon bottom -->
-        <g transform="translate(330,470)">
-          <rect width="60" height="52" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/>
-          <text x="12" y="34" font-size="22" fill="#1c1d1f" font-family="monospace">&lt;/&gt;</text>
-        </g>
- 
-        <!-- Piano/music bar chart top right -->
-        <g transform="translate(478,130)">
-          <rect x="0"  y="30" width="8" height="26" fill="#1c1d1f"/>
-          <rect x="12" y="18" width="8" height="38" fill="#1c1d1f"/>
-          <rect x="24" y="8"  width="8" height="48" fill="#1c1d1f"/>
-          <rect x="36" y="22" width="8" height="34" fill="#1c1d1f"/>
-          <rect x="48" y="14" width="8" height="42" fill="#1c1d1f"/>
-        </g>
- 
-        <!-- Dots pattern bottom left of circle -->
-        <g transform="translate(238,440)" opacity="0.35">
-          <circle cx="0"  cy="0"  r="3" fill="#1c1d1f"/>
-          <circle cx="12" cy="0"  r="3" fill="#1c1d1f"/>
-          <circle cx="24" cy="0"  r="3" fill="#1c1d1f"/>
-          <circle cx="0"  cy="12" r="3" fill="#1c1d1f"/>
-          <circle cx="12" cy="12" r="3" fill="#1c1d1f"/>
-          <circle cx="24" cy="12" r="3" fill="#1c1d1f"/>
-          <circle cx="0"  cy="24" r="3" fill="#1c1d1f"/>
-          <circle cx="12" cy="24" r="3" fill="#1c1d1f"/>
-          <circle cx="24" cy="24" r="3" fill="#1c1d1f"/>
-        </g>
- 
-        <!-- Arrow cursor icon -->
-        <g transform="translate(326,290)">
-          <polygon points="0,0 0,28 8,22 14,36 18,34 12,20 22,20" fill="#1c1d1f"/>
-        </g>
- 
- 
-        <!-- ══ WOMAN (inside circle, right) ══ -->
-        <!-- Body – dotted patterned jacket -->
+        <g transform="translate(228,105)"><rect width="54" height="54" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/><circle cx="27" cy="27" r="14" stroke="#1c1d1f" stroke-width="1.8" fill="none"/><ellipse cx="27" cy="27" rx="7" ry="14" stroke="#1c1d1f" stroke-width="1.8" fill="none"/><line x1="13" y1="27" x2="41" y2="27" stroke="#1c1d1f" stroke-width="1.5"/></g>
+        <g transform="translate(358,88)"><rect width="46" height="38" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/><circle cx="23" cy="20" r="9" stroke="#1c1d1f" stroke-width="1.8" fill="none"/><rect x="14" y="6" width="10" height="7" rx="2" fill="#1c1d1f"/></g>
+        <g transform="translate(196,240)"><rect width="76" height="64" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/><text x="38" y="40" font-size="26" text-anchor="middle" fill="#1c1d1f" font-family="sans-serif">@</text></g>
+        <g transform="translate(205,370)"><rect width="120" height="52" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/><polygon points="28,38 18,46 38,46" fill="none" stroke="#1c1d1f" stroke-width="2"/><circle cx="60" cy="40" r="9" fill="none" stroke="#1c1d1f" stroke-width="2"/><polygon points="94,30 103,40 94,50 85,40" fill="none" stroke="#1c1d1f" stroke-width="2"/></g>
+        <g transform="translate(330,470)"><rect width="60" height="52" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/><text x="12" y="34" font-size="22" fill="#1c1d1f" font-family="monospace">&lt;/&gt;</text></g>
+        <g transform="translate(478,130)"><rect x="0" y="30" width="8" height="26" fill="#1c1d1f"/><rect x="12" y="18" width="8" height="38" fill="#1c1d1f"/><rect x="24" y="8" width="8" height="48" fill="#1c1d1f"/><rect x="36" y="22" width="8" height="34" fill="#1c1d1f"/><rect x="48" y="14" width="8" height="42" fill="#1c1d1f"/></g>
+        <g transform="translate(238,440)" opacity="0.35"><circle cx="0" cy="0" r="3" fill="#1c1d1f"/><circle cx="12" cy="0" r="3" fill="#1c1d1f"/><circle cx="24" cy="0" r="3" fill="#1c1d1f"/><circle cx="0" cy="12" r="3" fill="#1c1d1f"/><circle cx="12" cy="12" r="3" fill="#1c1d1f"/><circle cx="24" cy="12" r="3" fill="#1c1d1f"/><circle cx="0" cy="24" r="3" fill="#1c1d1f"/><circle cx="12" cy="24" r="3" fill="#1c1d1f"/><circle cx="24" cy="24" r="3" fill="#1c1d1f"/></g>
+        <g transform="translate(326,290)"><polygon points="0,0 0,28 8,22 14,36 18,34 12,20 22,20" fill="#1c1d1f"/></g>
         <g transform="translate(370,140)">
-          <!-- torso -->
           <ellipse cx="60" cy="100" rx="44" ry="58" fill="#f0f0f0" stroke="#1c1d1f" stroke-width="2"/>
-          <!-- dot pattern on torso -->
-          <circle cx="44" cy="82"  r="2.5" fill="#1c1d1f"/>
-          <circle cx="56" cy="78"  r="2.5" fill="#1c1d1f"/>
-          <circle cx="68" cy="82"  r="2.5" fill="#1c1d1f"/>
-          <circle cx="76" cy="90"  r="2.5" fill="#1c1d1f"/>
-          <circle cx="48" cy="95"  r="2.5" fill="#1c1d1f"/>
-          <circle cx="62" cy="93"  r="2.5" fill="#1c1d1f"/>
-          <circle cx="74" cy="100" r="2.5" fill="#1c1d1f"/>
-          <circle cx="50" cy="108" r="2.5" fill="#1c1d1f"/>
-          <circle cx="64" cy="108" r="2.5" fill="#1c1d1f"/>
-          <circle cx="42" cy="116" r="2.5" fill="#1c1d1f"/>
- 
-          <!-- head -->
+          <circle cx="44" cy="82" r="2.5" fill="#1c1d1f"/><circle cx="56" cy="78" r="2.5" fill="#1c1d1f"/><circle cx="68" cy="82" r="2.5" fill="#1c1d1f"/><circle cx="76" cy="90" r="2.5" fill="#1c1d1f"/><circle cx="48" cy="95" r="2.5" fill="#1c1d1f"/><circle cx="62" cy="93" r="2.5" fill="#1c1d1f"/><circle cx="74" cy="100" r="2.5" fill="#1c1d1f"/><circle cx="50" cy="108" r="2.5" fill="#1c1d1f"/><circle cx="64" cy="108" r="2.5" fill="#1c1d1f"/><circle cx="42" cy="116" r="2.5" fill="#1c1d1f"/>
           <ellipse cx="60" cy="30" rx="28" ry="30" fill="#5c3317"/>
-          <!-- hair -->
           <path d="M32,20 Q60,-10 88,20 Q88,0 60,0 Q32,0 32,20Z" fill="#1c1d1f"/>
-          <!-- long braid -->
           <path d="M88,20 Q100,60 96,120 Q92,160 86,180" stroke="#1c1d1f" stroke-width="8" fill="none" stroke-linecap="round"/>
-          <!-- face -->
           <ellipse cx="60" cy="34" rx="22" ry="22" fill="#8b5e3c"/>
- 
-          <!-- arm left (reaching out) -->
           <path d="M16,95 Q-20,110 -48,130" stroke="#5c3317" stroke-width="14" fill="none" stroke-linecap="round"/>
           <ellipse cx="-52" cy="133" rx="8" ry="10" fill="#5c3317" transform="rotate(-20,-52,133)"/>
- 
-          <!-- arm right -->
           <path d="M104,90 Q130,70 148,85" stroke="#5c3317" stroke-width="14" fill="none" stroke-linecap="round"/>
           <ellipse cx="152" cy="88" rx="8" ry="10" fill="#5c3317" transform="rotate(10,152,88)"/>
- 
-          <!-- legs – checkerboard trousers -->
-          <!-- left leg -->
-          <rect x="28" y="152" width="28" height="80" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/>
-          <rect x="28" y="152" width="14" height="40" fill="#1c1d1f"/>
-          <rect x="42" y="192" width="14" height="40" fill="#1c1d1f"/>
-          <!-- right leg -->
-          <rect x="62" y="152" width="28" height="80" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/>
-          <rect x="62" y="192" width="14" height="40" fill="#1c1d1f"/>
-          <rect x="76" y="152" width="14" height="40" fill="#1c1d1f"/>
- 
-          <!-- boots -->
-          <rect x="22" y="228" width="36" height="14" rx="4" fill="#1c1d1f"/>
-          <rect x="58" y="228" width="36" height="14" rx="4" fill="#1c1d1f"/>
+          <rect x="28" y="152" width="28" height="80" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/><rect x="28" y="152" width="14" height="40" fill="#1c1d1f"/><rect x="42" y="192" width="14" height="40" fill="#1c1d1f"/>
+          <rect x="62" y="152" width="28" height="80" rx="4" fill="#fff" stroke="#1c1d1f" stroke-width="2"/><rect x="62" y="192" width="14" height="40" fill="#1c1d1f"/><rect x="76" y="152" width="14" height="40" fill="#1c1d1f"/>
+          <rect x="22" y="228" width="36" height="14" rx="4" fill="#1c1d1f"/><rect x="58" y="228" width="36" height="14" rx="4" fill="#1c1d1f"/>
         </g>
- 
- 
-        <!-- ══ MAN (left, outside circle) ══ -->
         <g transform="translate(82,220)">
-          <!-- head -->
           <ellipse cx="52" cy="28" rx="26" ry="28" fill="#e8956d"/>
-          <!-- hair (orange/auburn) -->
           <path d="M26,18 Q52,-6 78,18 Q78,4 52,2 Q26,2 26,18Z" fill="#e07030"/>
- 
-          <!-- striped shirt torso -->
           <rect x="18" y="52" width="68" height="80" rx="8" fill="#f0f0f0"/>
-          <!-- stripes -->
-          <rect x="18" y="60"  width="68" height="6" fill="#e8e8e8"/>
-          <rect x="18" y="74"  width="68" height="6" fill="#e8e8e8"/>
-          <rect x="18" y="88"  width="68" height="6" fill="#e8e8e8"/>
-          <rect x="18" y="102" width="68" height="6" fill="#e8e8e8"/>
-          <rect x="18" y="116" width="68" height="6" fill="#e8e8e8"/>
-          <!-- shirt outline -->
+          <rect x="18" y="60" width="68" height="6" fill="#e8e8e8"/><rect x="18" y="74" width="68" height="6" fill="#e8e8e8"/><rect x="18" y="88" width="68" height="6" fill="#e8e8e8"/><rect x="18" y="102" width="68" height="6" fill="#e8e8e8"/><rect x="18" y="116" width="68" height="6" fill="#e8e8e8"/>
           <rect x="18" y="52" width="68" height="80" rx="8" fill="none" stroke="#1c1d1f" stroke-width="2"/>
- 
-          <!-- arm reaching right (holding paper) -->
           <path d="M86,72 Q130,80 160,100" stroke="#e8956d" stroke-width="14" fill="none" stroke-linecap="round"/>
-          <!-- hand -->
           <ellipse cx="163" cy="102" rx="9" ry="11" fill="#e8956d" transform="rotate(20,163,102)"/>
- 
-          <!-- arm left -->
           <path d="M18,72 Q0,90 -4,110" stroke="#e8956d" stroke-width="14" fill="none" stroke-linecap="round"/>
- 
-          <!-- trousers -->
-          <rect x="14" y="128" width="32" height="110" rx="4" fill="#1c1d1f" stroke="#fff" stroke-width="1.5"/>
-          <rect x="52" y="128" width="32" height="110" rx="4" fill="#1c1d1f" stroke="#fff" stroke-width="1.5"/>
- 
-          <!-- sneakers -->
-          <!-- left shoe -->
-          <rect x="6"  y="232" width="42" height="16" rx="5" fill="#e8e8e8" stroke="#1c1d1f" stroke-width="2"/>
-          <rect x="6"  y="240" width="42" height="8"  rx="0" fill="#fff"/>
-          <circle cx="18" cy="244" r="3" fill="#d1d7dc"/>
-          <circle cx="30" cy="244" r="3" fill="#d1d7dc"/>
-          <!-- right shoe -->
-          <rect x="48" y="232" width="42" height="16" rx="5" fill="#e8e8e8" stroke="#1c1d1f" stroke-width="2"/>
-          <rect x="48" y="240" width="42" height="8"  rx="0" fill="#fff"/>
-          <circle cx="60" cy="244" r="3" fill="#d1d7dc"/>
-          <circle cx="72" cy="244" r="3" fill="#d1d7dc"/>
- 
-          <!-- paper the man is holding -->
+          <rect x="14" y="128" width="32" height="110" rx="4" fill="#1c1d1f" stroke="#fff" stroke-width="1.5"/><rect x="52" y="128" width="32" height="110" rx="4" fill="#1c1d1f" stroke="#fff" stroke-width="1.5"/>
+          <rect x="6" y="232" width="42" height="16" rx="5" fill="#e8e8e8" stroke="#1c1d1f" stroke-width="2"/><rect x="6" y="240" width="42" height="8" fill="#fff"/><circle cx="18" cy="244" r="3" fill="#d1d7dc"/><circle cx="30" cy="244" r="3" fill="#d1d7dc"/>
+          <rect x="48" y="232" width="42" height="16" rx="5" fill="#e8e8e8" stroke="#1c1d1f" stroke-width="2"/><rect x="48" y="240" width="42" height="8" fill="#fff"/><circle cx="60" cy="244" r="3" fill="#d1d7dc"/><circle cx="72" cy="244" r="3" fill="#d1d7dc"/>
           <rect x="158" y="88" width="52" height="64" rx="3" fill="#fff" stroke="#1c1d1f" stroke-width="2" transform="rotate(-8,158,88)"/>
-          <line x1="168" y1="108" x2="200" y2="104" stroke="#1c1d1f" stroke-width="1.5"/>
-          <line x1="168" y1="118" x2="200" y2="114" stroke="#1c1d1f" stroke-width="1.5"/>
-          <line x1="168" y1="128" x2="196" y2="124" stroke="#1c1d1f" stroke-width="1.5"/>
-          <!-- @ symbol on paper -->
+          <line x1="168" y1="108" x2="200" y2="104" stroke="#1c1d1f" stroke-width="1.5"/><line x1="168" y1="118" x2="200" y2="114" stroke="#1c1d1f" stroke-width="1.5"/><line x1="168" y1="128" x2="196" y2="124" stroke="#1c1d1f" stroke-width="1.5"/>
           <text x="170" y="104" font-size="16" fill="#1c1d1f" font-family="sans-serif">@</text>
         </g>
- 
       </svg>
     </div>
- 
-    <!-- ── SIGNUP FORM ── -->
+
+    <!-- Signup Form -->
     <div class="login-side">
       <h1 class="login-heading">Sign up with email</h1>
- 
       <input class="input-field" type="text" placeholder="Full name"/>
       <input class="input-field" type="email" placeholder="Email"/>
- 
-      <!-- Checkbox -->
       <div class="checkbox-row">
         <input type="checkbox" id="offers" checked/>
         <label for="offers">Send me special offers, personalized recommendations, and learning tips.</label>
       </div>
- 
       <button class="btn-continue">Continue</button>
- 
-      <!-- Divider -->
       <div class="divider">
         <div class="divider-line"></div>
         <span class="divider-text">Other sign up options</span>
         <div class="divider-line"></div>
       </div>
- 
-      <!-- Social -->
       <div class="social-row">
         <button class="social-btn" title="Continue with Google">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
         </button>
         <button class="social-btn" title="Continue with Facebook">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" fill="#1877F2"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" fill="#1877F2"/></svg>
         </button>
         <button class="social-btn" title="Continue with Apple">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.27.07 2.15.63 2.9.68.98-.17 1.93-.77 3-.68 1.27.11 2.24.61 2.85 1.55-2.53 1.67-1.95 5.1.7 6.09-.54 1.59-1.28 3.18-2.45 5.24zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="#000"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.27.07 2.15.63 2.9.68.98-.17 1.93-.77 3-.68 1.27.11 2.24.61 2.85 1.55-2.53 1.67-1.95 5.1.7 6.09-.54 1.59-1.28 3.18-2.45 5.24zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="#000"/></svg>
         </button>
       </div>
- 
-      <!-- Terms -->
-      <p class="terms-text">
-        By signing up, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
-      </p>
- 
-      <!-- Bottom box -->
-      <div class="bottom-box">
-        Already have an account? <a href="#">Log in</a>
-      </div>
+      <p class="terms-text">By signing up, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+      <div class="bottom-box">Already have an account? <a href="login.html">Log in</a></div>
     </div>
- 
+
   </div>
 </div>
 
 <!-- Footer -->
-   <footer class="ft">
- 
-    <!-- A: Top bar — 1280 x 93, padding 12px 48px -->
-    <div class="ft-topbar">
-      <div class="ft-topbar__inner">
-        <p class="ft-topbar__text">
-          Top companies choose <span class="ft-topbar__highlight">Udemy Business</span> to build in-demand career skills.
-        </p>
-
-        <div class="ft-topbar__logos">
-          <img src="https://s.udemycdn.com/partner-logos/v4/nasdaq-light.svg" alt="">
-          <img src="https://s.udemycdn.com/partner-logos/v4/volkswagen-light.svg" alt="">
-          <img src="https://s.udemycdn.com/partner-logos/v4/netapp-light.svg" alt="">
-          <img src="https://s.udemycdn.com/partner-logos/v4/eventbrite-light.svg" alt="">
-        </div>
+<footer class="ft">
+  <div class="ft-topbar">
+    <div class="ft-topbar__inner">
+      <p class="ft-topbar__text">Top companies choose <span class="ft-topbar__highlight">Udemy Business</span> to build in-demand career skills.</p>
+      <div class="ft-topbar__logos">
+        <img src="https://s.udemycdn.com/partner-logos/v4/nasdaq-light.svg" alt="Nasdaq">
+        <img src="https://s.udemycdn.com/partner-logos/v4/volkswagen-light.svg" alt="Volkswagen">
+        <img src="https://s.udemycdn.com/partner-logos/v4/netapp-light.svg" alt="NetApp">
+        <img src="https://s.udemycdn.com/partner-logos/v4/eventbrite-light.svg" alt="Eventbrite">
       </div>
     </div>
- 
-    <!-- B: Mega menu — 1280 x 553.59, padding 48px 24px 0 -->
-    <div class="ft-megamenu">
-      <div class="ft-megamenu__inner">
+  </div>
+  <div class="ft-megamenu">
+    <div class="ft-megamenu__inner">
       <h2 class="ft-megamenu__heading">Explore top skills and certifications</h2>
- 
       <div class="ft-link-row">
-        <div class="ft-link-col">
-          <h3>In-demand Careers</h3>
-          <ul>
-            <li><a href="#">Data Scientist</a></li>
-            <li><a href="#">Full Stack Web Developer</a></li>
-            <li><a href="#">Cloud Engineer</a></li>
-            <li><a href="#">Project Manager</a></li>
-            <li><a href="#">Game Developer</a></li>
-            <li><a href="#">All Career Accelerators</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Web Development</h3>
-          <ul>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">JavaScript</a></li>
-            <li><a href="#">React JS</a></li>
-            <li><a href="#">Angular</a></li>
-            <li><a href="#">Java</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>IT Certifications</h3>
-          <ul>
-            <li><a href="#">Amazon AWS</a></li>
-            <li><a href="#">AWS Certified Cloud Practitioner</a></li>
-            <li><a href="#">AZ-900: Microsoft Azure Fundamentals</a></li>
-            <li><a href="#">AWS Certified Solutions Architect - Associate</a></li>
-            <li><a href="#">Kubernetes</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Leadership</h3>
-          <ul>
-            <li><a href="#">Leadership</a></li>
-            <li><a href="#">Management Skills</a></li>
-            <li><a href="#">Project Management</a></li>
-            <li><a href="#">Personal Productivity</a></li>
-            <li><a href="#">Emotional Intelligence</a></li>
-          </ul>
-        </div>
+        <div class="ft-link-col"><h3>In-demand Careers</h3><ul><li><a href="#">Data Scientist</a></li><li><a href="#">Full Stack Web Developer</a></li><li><a href="#">Cloud Engineer</a></li><li><a href="#">Project Manager</a></li></ul></div>
+        <div class="ft-link-col"><h3>Web Development</h3><ul><li><a href="#">Web Development</a></li><li><a href="#">JavaScript</a></li><li><a href="#">React JS</a></li><li><a href="#">Angular</a></li></ul></div>
+        <div class="ft-link-col"><h3>IT Certifications</h3><ul><li><a href="#">Amazon AWS</a></li><li><a href="#">AWS Certified Cloud Practitioner</a></li><li><a href="#">AZ-900: Microsoft Azure Fundamentals</a></li></ul></div>
+        <div class="ft-link-col"><h3>Leadership</h3><ul><li><a href="#">Leadership</a></li><li><a href="#">Management Skills</a></li><li><a href="#">Project Management</a></li></ul></div>
       </div>
- 
       <div class="ft-link-row">
-        <div class="ft-link-col">
-          <h3>Certifications by Skill</h3>
-          <ul>
-            <li><a href="#">Cybersecurity Certification</a></li>
-            <li><a href="#">Project Management Certification</a></li>
-            <li><a href="#">Cloud Certification</a></li>
-            <li><a href="#">Data Analytics Certification</a></li>
-            <li><a href="#">HR Management Certification</a></li>
-            <li><a href="#">See all Certifications</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Data Science</h3>
-          <ul>
-            <li><a href="#">Data Science</a></li>
-            <li><a href="#">Python</a></li>
-            <li><a href="#">Machine Learning</a></li>
-            <li><a href="#">ChatGPT</a></li>
-            <li><a href="#">Deep Learning</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Communication</h3>
-          <ul>
-            <li><a href="#">Communication Skills</a></li>
-            <li><a href="#">Presentation Skills</a></li>
-            <li><a href="#">Public Speaking</a></li>
-            <li><a href="#">Writing</a></li>
-            <li><a href="#">PowerPoint</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Business Analytics &amp; Intelligence</h3>
-          <ul>
-            <li><a href="#">Microsoft Excel</a></li>
-            <li><a href="#">SQL</a></li>
-            <li><a href="#">Microsoft Power BI</a></li>
-            <li><a href="#">Data Analysis</a></li>
-            <li><a href="#">Business Analysis</a></li>
-          </ul>
-        </div>
-      </div>
+        <div class="ft-link-col"><h3>Certifications by Skill</h3><ul><li><a href="#">Cybersecurity Certification</a></li><li><a href="#">Cloud Certification</a></li><li><a href="#">Data Analytics Certification</a></li></ul></div>
+        <div class="ft-link-col"><h3>Data Science</h3><ul><li><a href="#">Data Science</a></li><li><a href="#">Python</a></li><li><a href="#">Machine Learning</a></li></ul></div>
+        <div class="ft-link-col"><h3>Communication</h3><ul><li><a href="#">Communication Skills</a></li><li><a href="#">Presentation Skills</a></li><li><a href="#">Public Speaking</a></li></ul></div>
+        <div class="ft-link-col"><h3>Business Analytics &amp; Intelligence</h3><ul><li><a href="#">Microsoft Excel</a></li><li><a href="#">SQL</a></li><li><a href="#">Microsoft Power BI</a></li></ul></div>
       </div>
     </div>
- 
-    <!-- C: Lower footer — 1280 x 257.59, padding 24px 48px 0 -->
-    <div class="ft-lower">
-      <div class="ft-lower__inner">
+  </div>
+  <div class="ft-lower">
+    <div class="ft-lower__inner">
       <div class="ft-link-row ft-link-row--lower">
-        <div class="ft-link-col">
-          <h3>About</h3>
-          <ul>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Investors</a></li>
-            <li><a href="#">Find more on Coursera</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Discover Udemy</h3>
-          <ul>
-            <li><a href="#">Get the app</a></li>
-            <li><a href="#">Teach on Udemy</a></li>
-            <li><a href="#">Plans and Pricing</a></li>
-            <li><a href="#">Affiliate</a></li>
-            <li><a href="#">Help and Support</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Udemy for Business</h3>
-          <ul>
-            <li><a href="#">Udemy Business</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Legal &amp; Accessibility</h3>
-          <ul>
-            <li><a href="#">Accessibility statement</a></li>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">Sitemap</a></li>
-            <li><a href="#">Terms</a></li>
-          </ul>
-        </div>
-      </div>
+        <div class="ft-link-col"><h3>About</h3><ul><li><a href="#">About us</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact us</a></li><li><a href="#">Blog</a></li></ul></div>
+        <div class="ft-link-col"><h3>Discover Udemy</h3><ul><li><a href="#">Get the app</a></li><li><a href="#">Teach on Udemy</a></li><li><a href="#">Plans and Pricing</a></li></ul></div>
+        <div class="ft-link-col"><h3>Udemy for Business</h3><ul><li><a href="#">Udemy Business</a></li></ul></div>
+        <div class="ft-link-col"><h3>Legal &amp; Accessibility</h3><ul><li><a href="#">Accessibility statement</a></li><li><a href="#">Privacy policy</a></li><li><a href="#">Terms</a></li></ul></div>
       </div>
     </div>
- 
-    <!-- D: Bottom bar — 1280 x 83.2, padding 0 48px -->
-    <div class="ft-bottombar">
-      <div class="ft-bottombar__inner">
+  </div>
+  <div class="ft-bottombar">
+    <div class="ft-bottombar__inner">
       <div class="ft-bottombar__brand">
-        <!-- NOTE: placeholder for the official Udemy logo asset -->
         <span class="ft-udemy-placeholder">Udemy</span>
         <span class="ft-bottombar__copyright">&copy; 2026 Udemy, Inc.</span>
       </div>
- 
       <a href="#" class="ft-bottombar__cookie">Cookie settings</a>
- 
       <div class="ft-bottombar__lang">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M3 12H21M12 3C14.5 5.5 15.8 8.6 15.8 12C15.8 15.4 14.5 18.5 12 21C9.5 18.5 8.2 15.4 8.2 12C8.2 8.6 9.5 5.5 12 3Z" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12H21M12 3C14.5 5.5 15.8 8.6 15.8 12C15.8 15.4 14.5 18.5 12 21C9.5 18.5 8.2 15.4 8.2 12C8.2 8.6 9.5 5.5 12 3Z" stroke="currentColor" stroke-width="1.6"/></svg>
         <span>English</span>
       </div>
-      </div>
     </div>
- 
-  </footer>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  hamburger.addEventListener('keydown', e => { if (e.key === 'Enter') mobileMenu.classList.toggle('open'); });
+</script>
+
 </body>
 </html>
