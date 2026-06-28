@@ -6,6 +6,45 @@
   <title>Udemy – Sign Up</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="login.css">
+  <style>
+    /* Additional styles for validation messages */
+    .input-error {
+      border-color: #d4351c !important;
+      background-color: #fff8f7 !important;
+    }
+    .error-message {
+      color: #d4351c;
+      font-size: 13px;
+      margin-top: 6px;
+      display: none;
+      font-weight: 500;
+    }
+    .error-message.visible {
+      display: block;
+    }
+    .input-field:focus {
+      outline: none;
+      border-color: #5624d0;
+      box-shadow: 0 0 0 2px rgba(86, 36, 208, 0.2);
+    }
+    .btn-continue:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .checkbox-error {
+      color: #d4351c;
+      font-size: 13px;
+      margin-top: 4px;
+      display: none;
+      font-weight: 500;
+    }
+    .checkbox-error.visible {
+      display: block;
+    }
+    .checkbox-row.error label {
+      color: #d4351c;
+    }
+  </style>
 </head>
 <body>
 
@@ -105,13 +144,32 @@
     <!-- Signup Form -->
     <div class="login-side">
       <h1 class="login-heading">Sign up with email</h1>
-      <input class="input-field" type="text" placeholder="Full name"/>
-      <input class="input-field" type="email" placeholder="Email"/>
-      <div class="checkbox-row">
+      
+      <!-- Full Name -->
+      <input class="input-field" id="fullName" type="text" placeholder="Full name"/>
+      <div class="error-message" id="nameError">Please enter your full name (minimum 2 characters)</div>
+      
+      <!-- Email -->
+      <input class="input-field" id="email" type="email" placeholder="Email"/>
+      <div class="error-message" id="emailError">Please enter a valid email address</div>
+      
+      <!-- Password -->
+      <input class="input-field" id="password" type="password" placeholder="Password"/>
+      <div class="error-message" id="passwordError">Password must be at least 8 characters with uppercase, lowercase, number and special character</div>
+      
+      <!-- Confirm Password -->
+      <input class="input-field" id="confirmPassword" type="password" placeholder="Confirm Password"/>
+      <div class="error-message" id="confirmError">Passwords do not match</div>
+      
+      <!-- Checkbox -->
+      <div class="checkbox-row" id="checkboxRow">
         <input type="checkbox" id="offers" checked/>
         <label for="offers">Send me special offers, personalized recommendations, and learning tips.</label>
       </div>
-      <button class="btn-continue">Continue</button>
+      <div class="checkbox-error" id="checkboxError">You must agree to the terms to continue</div>
+      
+      <button class="btn-continue" id="signupBtn">Continue</button>
+      
       <div class="divider">
         <div class="divider-line"></div>
         <span class="divider-text">Other sign up options</span>
@@ -191,10 +249,352 @@
 </footer>
 
 <script>
+  // ===== HAMBURGER MENU TOGGLE =====
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   hamburger.addEventListener('keydown', e => { if (e.key === 'Enter') mobileMenu.classList.toggle('open'); });
+
+  // ===== SIGNUP VALIDATIONS =====
+  (function() {
+    // Get all form elements
+    const nameInput = document.getElementById('fullName');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmInput = document.getElementById('confirmPassword');
+    const checkbox = document.getElementById('offers');
+    const signupBtn = document.getElementById('signupBtn');
+    
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    const confirmError = document.getElementById('confirmError');
+    const checkboxError = document.getElementById('checkboxError');
+    const checkboxRow = document.getElementById('checkboxRow');
+
+    // ===== VALIDATION FUNCTIONS =====
+
+    // Validate Full Name
+    function validateName(value) {
+      const trimmed = value.trim();
+      if (trimmed.length === 0) {
+        return { valid: false, message: 'Please enter your full name' };
+      }
+      if (trimmed.length < 2) {
+        return { valid: false, message: 'Name must be at least 2 characters' };
+      }
+      if (!/^[a-zA-Z\s\-'\.]+$/.test(trimmed)) {
+        return { valid: false, message: 'Name can only contain letters, spaces, hyphens, apostrophes and periods' };
+      }
+      return { valid: true, message: '' };
+    }
+
+    // Validate Email
+    function validateEmail(value) {
+      const trimmed = value.trim();
+      if (trimmed.length === 0) {
+        return { valid: false, message: 'Please enter your email address' };
+      }
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(trimmed)) {
+        return { valid: false, message: 'Please enter a valid email address (e.g., name@domain.com)' };
+      }
+      return { valid: true, message: '' };
+    }
+
+    // Validate Password (strong password)
+    function validatePassword(value) {
+      if (value.length === 0) {
+        return { valid: false, message: 'Please enter a password' };
+      }
+      if (value.length < 8) {
+        return { valid: false, message: 'Password must be at least 8 characters long' };
+      }
+      if (!/[A-Z]/.test(value)) {
+        return { valid: false, message: 'Password must contain at least one uppercase letter' };
+      }
+      if (!/[a-z]/.test(value)) {
+        return { valid: false, message: 'Password must contain at least one lowercase letter' };
+      }
+      if (!/[0-9]/.test(value)) {
+        return { valid: false, message: 'Password must contain at least one number' };
+      }
+      if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+        return { valid: false, message: 'Password must contain at least one special character (!@#$%^&* etc.)' };
+      }
+      return { valid: true, message: '' };
+    }
+
+    // Validate Confirm Password
+    function validateConfirm(password, confirm) {
+      if (confirm.length === 0) {
+        return { valid: false, message: 'Please confirm your password' };
+      }
+      if (password !== confirm) {
+        return { valid: false, message: 'Passwords do not match' };
+      }
+      return { valid: true, message: '' };
+    }
+
+    // Validate Checkbox
+    function validateCheckbox(checked) {
+      if (!checked) {
+        return { valid: false, message: 'You must agree to receive offers to continue' };
+      }
+      return { valid: true, message: '' };
+    }
+
+    // ===== REAL-TIME VALIDATION =====
+
+    // Name validation on input
+    nameInput.addEventListener('input', function() {
+      const result = validateName(this.value);
+      if (!result.valid && this.value.trim().length > 0) {
+        this.classList.add('input-error');
+        nameError.textContent = result.message;
+        nameError.classList.add('visible');
+      } else if (this.value.trim().length === 0) {
+        this.classList.remove('input-error');
+        nameError.classList.remove('visible');
+      } else {
+        this.classList.remove('input-error');
+        nameError.classList.remove('visible');
+      }
+      updateButtonState();
+    });
+
+    // Email validation on input
+    emailInput.addEventListener('input', function() {
+      const result = validateEmail(this.value);
+      if (!result.valid && this.value.trim().length > 0) {
+        this.classList.add('input-error');
+        emailError.textContent = result.message;
+        emailError.classList.add('visible');
+      } else if (this.value.trim().length === 0) {
+        this.classList.remove('input-error');
+        emailError.classList.remove('visible');
+      } else {
+        this.classList.remove('input-error');
+        emailError.classList.remove('visible');
+      }
+      updateButtonState();
+    });
+
+    // Password validation on input
+    passwordInput.addEventListener('input', function() {
+      const result = validatePassword(this.value);
+      if (!result.valid && this.value.length > 0) {
+        this.classList.add('input-error');
+        passwordError.textContent = result.message;
+        passwordError.classList.add('visible');
+      } else if (this.value.length === 0) {
+        this.classList.remove('input-error');
+        passwordError.classList.remove('visible');
+      } else {
+        this.classList.remove('input-error');
+        passwordError.classList.remove('visible');
+      }
+      // Also re-validate confirm password if it has value
+      if (confirmInput.value.length > 0) {
+        const confirmResult = validateConfirm(this.value, confirmInput.value);
+        if (!confirmResult.valid) {
+          confirmInput.classList.add('input-error');
+          confirmError.textContent = confirmResult.message;
+          confirmError.classList.add('visible');
+        } else {
+          confirmInput.classList.remove('input-error');
+          confirmError.classList.remove('visible');
+        }
+      }
+      updateButtonState();
+    });
+
+    // Confirm password validation on input
+    confirmInput.addEventListener('input', function() {
+      const result = validateConfirm(passwordInput.value, this.value);
+      if (!result.valid && this.value.length > 0) {
+        this.classList.add('input-error');
+        confirmError.textContent = result.message;
+        confirmError.classList.add('visible');
+      } else if (this.value.length === 0) {
+        this.classList.remove('input-error');
+        confirmError.classList.remove('visible');
+      } else {
+        this.classList.remove('input-error');
+        confirmError.classList.remove('visible');
+      }
+      updateButtonState();
+    });
+
+    // Checkbox validation
+    checkbox.addEventListener('change', function() {
+      const result = validateCheckbox(this.checked);
+      if (!result.valid) {
+        checkboxRow.classList.add('error');
+        checkboxError.textContent = result.message;
+        checkboxError.classList.add('visible');
+      } else {
+        checkboxRow.classList.remove('error');
+        checkboxError.classList.remove('visible');
+      }
+      updateButtonState();
+    });
+
+    // ===== UPDATE BUTTON STATE =====
+    function updateButtonState() {
+      const nameValid = validateName(nameInput.value).valid;
+      const emailValid = validateEmail(emailInput.value).valid;
+      const passwordValid = validatePassword(passwordInput.value).valid;
+      const confirmValid = validateConfirm(passwordInput.value, confirmInput.value).valid;
+      const checkboxValid = validateCheckbox(checkbox.checked).valid;
+      
+      const allValid = nameValid && emailValid && passwordValid && confirmValid && checkboxValid;
+      signupBtn.disabled = !allValid;
+      
+      // Visual feedback
+      if (allValid) {
+        signupBtn.style.opacity = '1';
+        signupBtn.style.cursor = 'pointer';
+      } else {
+        signupBtn.style.opacity = '0.6';
+        signupBtn.style.cursor = 'not-allowed';
+      }
+    }
+
+    // ===== FOCUS/BLUR HANDLERS =====
+    
+    // On blur, validate if there's any value
+    nameInput.addEventListener('blur', function() {
+      if (this.value.trim().length > 0) {
+        const result = validateName(this.value);
+        if (!result.valid) {
+          this.classList.add('input-error');
+          nameError.textContent = result.message;
+          nameError.classList.add('visible');
+        }
+      }
+    });
+
+    emailInput.addEventListener('blur', function() {
+      if (this.value.trim().length > 0) {
+        const result = validateEmail(this.value);
+        if (!result.valid) {
+          this.classList.add('input-error');
+          emailError.textContent = result.message;
+          emailError.classList.add('visible');
+        }
+      }
+    });
+
+    passwordInput.addEventListener('blur', function() {
+      if (this.value.length > 0) {
+        const result = validatePassword(this.value);
+        if (!result.valid) {
+          this.classList.add('input-error');
+          passwordError.textContent = result.message;
+          passwordError.classList.add('visible');
+        }
+      }
+    });
+
+    confirmInput.addEventListener('blur', function() {
+      if (this.value.length > 0) {
+        const result = validateConfirm(passwordInput.value, this.value);
+        if (!result.valid) {
+          this.classList.add('input-error');
+          confirmError.textContent = result.message;
+          confirmError.classList.add('visible');
+        }
+      }
+    });
+
+    // On focus, clear error state
+    nameInput.addEventListener('focus', function() {
+      this.classList.remove('input-error');
+      nameError.classList.remove('visible');
+    });
+    emailInput.addEventListener('focus', function() {
+      this.classList.remove('input-error');
+      emailError.classList.remove('visible');
+    });
+    passwordInput.addEventListener('focus', function() {
+      this.classList.remove('input-error');
+      passwordError.classList.remove('visible');
+    });
+    confirmInput.addEventListener('focus', function() {
+      this.classList.remove('input-error');
+      confirmError.classList.remove('visible');
+    });
+
+    // ===== SUBMIT HANDLER =====
+    signupBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Final validation before submit
+      const nameValid = validateName(nameInput.value);
+      const emailValid = validateEmail(emailInput.value);
+      const passwordValid = validatePassword(passwordInput.value);
+      const confirmValid = validateConfirm(passwordInput.value, confirmInput.value);
+      const checkboxValid = validateCheckbox(checkbox.checked);
+
+      // Show all errors
+      if (!nameValid.valid) {
+        nameInput.classList.add('input-error');
+        nameError.textContent = nameValid.message;
+        nameError.classList.add('visible');
+        nameInput.focus();
+        return;
+      }
+      if (!emailValid.valid) {
+        emailInput.classList.add('input-error');
+        emailError.textContent = emailValid.message;
+        emailError.classList.add('visible');
+        emailInput.focus();
+        return;
+      }
+      if (!passwordValid.valid) {
+        passwordInput.classList.add('input-error');
+        passwordError.textContent = passwordValid.message;
+        passwordError.classList.add('visible');
+        passwordInput.focus();
+        return;
+      }
+      if (!confirmValid.valid) {
+        confirmInput.classList.add('input-error');
+        confirmError.textContent = confirmValid.message;
+        confirmError.classList.add('visible');
+        confirmInput.focus();
+        return;
+      }
+      if (!checkboxValid.valid) {
+        checkboxRow.classList.add('error');
+        checkboxError.textContent = checkboxValid.message;
+        checkboxError.classList.add('visible');
+        return;
+      }
+
+      // Success!
+      alert('✅ Account created successfully! Welcome to Udemy!');
+      
+      // Uncomment to redirect
+      // window.location.href = 'dashboard.html';
+    });
+
+    // ===== ENTER KEY SUPPORT =====
+    const inputs = [nameInput, emailInput, passwordInput, confirmInput];
+    inputs.forEach(input => {
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !signupBtn.disabled) {
+          signupBtn.click();
+        }
+      });
+    });
+
+    // ===== INITIAL STATE =====
+    // Enable/disable submit button
+    updateButtonState();
+
+  })();
 </script>
 
 </body>

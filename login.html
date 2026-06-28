@@ -6,6 +6,32 @@
   <title>Udemy – Log in</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="login.css">
+  <style>
+    /* Additional styles for validation messages */
+    .input-error {
+      border-color: #d4351c !important;
+      background-color: #fff8f7 !important;
+    }
+    .error-message {
+      color: #d4351c;
+      font-size: 13px;
+      margin-top: 6px;
+      display: none;
+      font-weight: 500;
+    }
+    .error-message.visible {
+      display: block;
+    }
+    .input-field:focus {
+      outline: none;
+      border-color: #5624d0;
+      box-shadow: 0 0 0 2px rgba(86, 36, 208, 0.2);
+    }
+    .btn-continue:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  </style>
 </head>
 <body>
 
@@ -163,8 +189,13 @@
     <!-- Form -->
     <div class="login-side">
       <h1 class="login-heading">Log in to continue your<br>learning journey</h1>
-      <input class="input-field" type="text" placeholder="Email or Phone Number"/>
-      <button class="btn-continue">Continue</button>
+      
+      <!-- Email/Phone Input with error message -->
+      <input class="input-field" id="loginInput" type="text" placeholder="Email or Phone Number"/>
+      <div class="error-message" id="loginError">Please enter a valid email or phone number</div>
+      
+      <button class="btn-continue" id="loginBtn">Continue</button>
+      
       <div class="divider">
         <div class="divider-line"></div>
         <span class="divider-text">Other log in options</span>
@@ -244,10 +275,136 @@
 </footer>
 
 <script>
+  // ===== HAMBURGER MENU TOGGLE =====
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   hamburger.addEventListener('keydown', e => { if (e.key === 'Enter') mobileMenu.classList.toggle('open'); });
+
+  // ===== LOGIN VALIDATIONS =====
+  (function() {
+    const input = document.getElementById('loginInput');
+    const errorMsg = document.getElementById('loginError');
+    const loginBtn = document.getElementById('loginBtn');
+
+    // Validation function
+    function validateInput(value) {
+      // Trim whitespace
+      const trimmed = value.trim();
+      
+      // Check if empty
+      if (trimmed.length === 0) {
+        return { valid: false, message: 'Please enter your email or phone number' };
+      }
+
+      // Check if it's a valid email (basic)
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailRegex.test(trimmed)) {
+        return { valid: true, message: '' };
+      }
+
+      // Check if it's a valid phone number (Indian format: 10 digits, with optional +91 or 0 prefix)
+      // Matches: 9876543210, +919876543210, 0919876543210, 98765-43210
+      const phoneRegex = /^(\+91|0)?[\s\-]?[6-9]\d{9}$/;
+      const phoneClean = trimmed.replace(/[\s\-]/g, '');
+      if (/^(\+91|0)?[6-9]\d{9}$/.test(phoneClean)) {
+        return { valid: true, message: '' };
+      }
+
+      // Also check for 10 digit number without prefix
+      if (/^[6-9]\d{9}$/.test(trimmed.replace(/[\s\-]/g, ''))) {
+        return { valid: true, message: '' };
+      }
+
+      return { valid: false, message: 'Please enter a valid email or phone number' };
+    }
+
+    // Real-time validation on input
+    input.addEventListener('input', function() {
+      const result = validateInput(this.value);
+      if (!result.valid && this.value.trim().length > 0) {
+        this.classList.add('input-error');
+        errorMsg.textContent = result.message;
+        errorMsg.classList.add('visible');
+        loginBtn.disabled = true;
+      } else if (this.value.trim().length === 0) {
+        this.classList.remove('input-error');
+        errorMsg.classList.remove('visible');
+        loginBtn.disabled = true;
+      } else {
+        this.classList.remove('input-error');
+        errorMsg.classList.remove('visible');
+        loginBtn.disabled = false;
+      }
+    });
+
+    // On blur, validate if there's any value
+    input.addEventListener('blur', function() {
+      if (this.value.trim().length > 0) {
+        const result = validateInput(this.value);
+        if (!result.valid) {
+          this.classList.add('input-error');
+          errorMsg.textContent = result.message;
+          errorMsg.classList.add('visible');
+          loginBtn.disabled = true;
+        } else {
+          this.classList.remove('input-error');
+          errorMsg.classList.remove('visible');
+          loginBtn.disabled = false;
+        }
+      } else {
+        this.classList.remove('input-error');
+        errorMsg.classList.remove('visible');
+        loginBtn.disabled = true;
+      }
+    });
+
+    // On focus, clear error state
+    input.addEventListener('focus', function() {
+      this.classList.remove('input-error');
+      errorMsg.classList.remove('visible');
+      // Re-validate if there's content
+      if (this.value.trim().length > 0) {
+        const result = validateInput(this.value);
+        if (result.valid) {
+          loginBtn.disabled = false;
+        }
+      }
+    });
+
+    // Button click handler
+    loginBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const value = input.value.trim();
+      const result = validateInput(value);
+      
+      if (!result.valid) {
+        input.classList.add('input-error');
+        errorMsg.textContent = result.message;
+        errorMsg.classList.add('visible');
+        loginBtn.disabled = true;
+        input.focus();
+        return;
+      }
+
+      // Success - you can redirect or show success message
+      alert('✅ Login successful! Redirecting to your dashboard...');
+      
+      // Uncomment the line below to redirect
+      // window.location.href = 'dashboard.html';
+    });
+
+    // Allow Enter key to submit
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !loginBtn.disabled) {
+        loginBtn.click();
+      }
+    });
+
+    // Initial state: button disabled
+    loginBtn.disabled = true;
+
+  })();
 </script>
 
 </body>

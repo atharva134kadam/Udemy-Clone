@@ -279,8 +279,8 @@ body{
     background-size:cover; background-position:center;
 }
 .slide.active{ opacity:1; }
-.slide-1{ background:url("https://img-c.udemycdn.com/notices/home_carousel_slide/image/e617b016-c18a-4e52-bc24-527ade711899.jpg"); }
-.slide-2{ background:url("https://img-c.udemycdn.com/notices/home_carousel_slide/image/8f25ddcd-6af2-4bdc-a1ed-b44f59db2854.jpg"); }
+.slide-1{ background:url("https://img-c.udemycdn.com/notices/home_carousel_slide/image/c9e93efd-f86f-41fd-987c-96b020c0eeb9.jpg"); }
+.slide-2{ background:url("https://img-c.udemycdn.com/notices/home_carousel_slide/image/778d387c-36a9-4967-9d80-515dcc7e054c.png"); }
 
 .content-box1, .content-box2{
     width:min(530px,86%); background:#fff;
@@ -295,11 +295,11 @@ body{
 .content-box p,.content-box1 p,.content-box2 p{
     font-size:clamp(10px,1.6vw,12px); line-height:1.6; color:#4d4f5c;
 }
-.btn-group{ margin-top:clamp(10px,2vw,25px); display:flex; flex-wrap:wrap; gap:12px; }
+.btn-group{ margin-top:clamp(9px,2vw,20px); display:flex; flex-wrap:wrap; gap:12px; }
 .primary-btn{
     background:#6d28d9; color:#fff; border:none;
     padding:clamp(10px,1.8vw,16px) clamp(14px,2vw,22px);
-    border-radius:8px; font-size:clamp(13px,2vw,18px); font-weight:700; cursor:pointer;
+    border-radius:8px; font-size:clamp(10px,2vw,13px); font-weight:700; cursor:pointer;
 }
 .secondary-btn{
     background:#fff; color:#6d28d9; border:1px solid #6d28d9;
