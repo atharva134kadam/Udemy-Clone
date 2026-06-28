@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Udemy Navbar Clone</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,12 +18,161 @@
         </button>
 
         <div class="logo">
-            <a href="index.html"><img src="https://frontends.udemycdn.com/frontends-homepage/staticx/udemy/images/v7/logo-udemy.svg"
-                alt="Udemy"></a>
+            <a href="index.html"><img src="https://frontends.udemycdn.com/frontends-homepage/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy"></a>
         </div>
 
         <ul class="nav-links">
-            <li><a href="#">Find Courses</a></li>
+            <!-- Find Courses with mega dropdown -->
+            <li class="nav-item-mega">
+                <a href="#" class="nav-link-mega">Find Courses</a>
+
+                <div class="mega-dropdown">
+                    <!-- LEFT PANEL -->
+                    <div class="mega-left">
+
+                        <div class="mega-section-label">New &amp; Featured</div>
+
+                        <div class="mega-item mega-item--google" data-sub="ai-google">
+                            <span class="mega-g-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                                </svg>
+                            </span>
+                            Learn AI with Google
+                            <span class="mega-chevron">›</span>
+                        </div>
+
+                        <div class="mega-item" data-sub="learn-ai">Learn AI <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="careers">In-demand careers <span class="mega-chevron">›</span></div>
+                        <div class="mega-item mega-item--no-arrow">Courses with Role Play</div>
+
+                        <div class="mega-divider"></div>
+
+                        <div class="mega-item" data-sub="development">Development <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="business">Business <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="finance">Finance &amp; Accounting <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="it">IT &amp; Software <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="office">Office Productivity <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="personal">Personal Development <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="design">Design <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="marketing">Marketing <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="lifestyle">Lifestyle <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="photo">Photography &amp; Video <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="health">Health &amp; Fitness <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="music">Music <span class="mega-chevron">›</span></div>
+                        <div class="mega-item" data-sub="teaching">Teaching &amp; Academics <span class="mega-chevron">›</span></div>
+                    </div>
+
+                    <!-- RIGHT PANEL -->
+                    <div class="mega-right">
+                        <div class="mega-sub" data-sub="ai-google">
+                            <div class="mega-sub-item">AI Fundamentals <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">AI For Professionals <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">AI For Developers <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">AI For Creatives <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="learn-ai">
+                            <div class="mega-sub-item">ChatGPT <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Prompt Engineering <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Generative AI <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">AI Tools <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Machine Learning <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="careers">
+                            <div class="mega-sub-item">Data Scientist <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Full Stack Developer <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Cloud Engineer <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Project Manager <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Game Developer <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="development">
+                            <div class="mega-sub-item">Web Development <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Python <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">JavaScript <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">React <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Data Science <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Node.js <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="business">
+                            <div class="mega-sub-item">Entrepreneurship <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Communication <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Project Management <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Business Strategy <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="finance">
+                            <div class="mega-sub-item">Accounting &amp; Bookkeeping <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Financial Analysis <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Investing &amp; Trading <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">CFA Certification <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="it">
+                            <div class="mega-sub-item">Amazon AWS <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Cybersecurity <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Microsoft Azure <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Kubernetes <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Linux <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="office">
+                            <div class="mega-sub-item">Microsoft Excel <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Microsoft PowerPoint <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Microsoft Word <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Google Sheets <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="personal">
+                            <div class="mega-sub-item">Personal Productivity <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Leadership <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Career Development <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Public Speaking <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="design">
+                            <div class="mega-sub-item">Graphic Design <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">UI/UX Design <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Adobe Photoshop <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Figma <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="marketing">
+                            <div class="mega-sub-item">Digital Marketing <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Social Media Marketing <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">SEO <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Google Ads <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="lifestyle">
+                            <div class="mega-sub-item">Arts &amp; Crafts <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Food &amp; Beverage <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Travel <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Pet Care <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="photo">
+                            <div class="mega-sub-item">Photography <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Video Editing <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Adobe Lightroom <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">YouTube <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="health">
+                            <div class="mega-sub-item">Yoga <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Fitness <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Meditation <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Nutrition &amp; Diet <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="music">
+                            <div class="mega-sub-item">Guitar <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Piano <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Music Production <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Music Theory <span class="mega-chevron">›</span></div>
+                        </div>
+                        <div class="mega-sub" data-sub="teaching">
+                            <div class="mega-sub-item">Engineering <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Math <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Science <span class="mega-chevron">›</span></div>
+                            <div class="mega-sub-item">Online Education <span class="mega-chevron">›</span></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
             <li><a href="#">Get Certified</a></li>
             <li><a href="subscribe.html">Subscribe</a></li>
         </ul>
@@ -45,13 +192,9 @@
         </div>
 
         <div class="right-actions">
-        <button class="login-btn"><a href="login.html">Log in</a></button>
-
-        <button class="signup-btn"><a href="signup.html">SignUp</a></button>
-
-        <button class="lang-btn">
-            <i class="fa-solid fa-globe"></i>
-        </button>
+            <button class="login-btn"><a href="login.html">Log in</a></button>
+            <button class="signup-btn"><a href="signup.html">SignUp</a></button>
+            <button class="lang-btn"><i class="fa-solid fa-globe"></i></button>
         </div>
 
     </nav>
@@ -59,586 +202,454 @@
     <!-- Section 1 -->
     <section class="hero-slider">
     <button class="nav-btn prev">&#10094;</button>
-
     <div class="slides">
-        <!-- Slide 1 -->
         <div class="slide active slide-1">
             <div class="content-box1">
                 <h1>Build in-demand skills</h1>
-                <p>
-                    Get access to 26,000 courses from real-world experts
-                    with one subscription.
-                </p>
-
+                <p>Get access to 26,000 courses from real-world experts with one subscription.</p>
                 <div class="btn-group">
                     <button class="primary-btn">Get Personal Plan</button>
                     <button class="secondary-btn">Learn AI</button>
                 </div>
             </div>
         </div>
-
-        <!-- Slide 2 -->
         <div class="slide slide-2">
             <div class="content-box2">
                 <h1>Courses from ₹479.00</h1>
-                <p>
-                    Start building your learning routine today.
-                    Offer ends June 18.
-                </p>
+                <p>Start building your learning routine today. Offer ends June 18.</p>
             </div>
         </div>
     </div>
-
     <button class="nav-btn next">&#10095;</button>
 </section>
+
 
 <!-- Section 2 -->
 <section class="courses-section">
   <h2 class="section-heading">Trending Courses</h2>
- 
   <div class="slider-wrapper">
-    <!-- Left Arrow -->
     <button class="arrow arrow-left" id="arrowLeft" aria-label="Previous">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <polyline points="15 18 9 12 15 6"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
- 
-    <!-- Track clip (hides cards outside view; popups overflow via z-index) -->
     <div class="slider-clip" id="sliderClip">
     <div class="slider-track" id="sliderTrack">
- 
-      <!-- Card 1 -->
       <div class="course-card" data-index="0">
-        <div class="card-thumb">
-  <img src="https://img-c.udemycdn.com/course/240x135/7053781_bd4d.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;">
-</div>
+        <div class="card-thumb"><img src="https://img-c.udemycdn.com/course/240x135/7053781_bd4d.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="card-body">
           <div class="card-title">AI Coder: Complete Claude Code &amp; Coding Agents Course</div>
           <div class="card-author">Ligency , Ed Donner</div>
-          <div class="card-meta">
-            <span class="badge">Bestseller</span>
-            <span class="star">★</span>
-            <span class="rating-num">4.7</span>
-            <span class="rating-count">(7,067 ratings)</span>
-          </div>
-          <div class="card-price">
-            <span class="price-now">₹479.00</span>
-            <span class="price-old">₹1,919.00</span>
-          </div>
+          <div class="card-meta"><span class="badge">Bestseller</span><span class="star">★</span><span class="rating-num">4.7</span><span class="rating-count">(7,067 ratings)</span></div>
+          <div class="card-price"><span class="price-now">₹479.00</span><span class="price-old">₹1,919.00</span></div>
         </div>
-        <!-- Popup -->
         <div class="popup">
           <div class="popup-title">AI Coder: Complete Claude Code &amp; Coding Agents Course</div>
-          <div class="popup-meta-row">
-            <span class="badge badge-green">Bestseller</span>
-            <span class="popup-updated">Updated <strong>May 2026</strong></span>
-          </div>
+          <div class="popup-meta-row"><span class="badge badge-green">Bestseller</span><span class="popup-updated">Updated <strong>May 2026</strong></span></div>
           <div class="popup-stats">29.5 total hours · All Levels · Subtitles</div>
           <div class="popup-desc">Complete AI Coder training with Claude Code, coding agents, and multi-model workflows.</div>
-          <ul class="popup-bullets">
-            <li>Build full coding agents from scratch using Claude</li>
-            <li>Master agentic workflows and multi-step pipelines</li>
-            <li>Deploy real-world AI-powered coding tools</li>
-          </ul>
+          <ul class="popup-bullets"><li>Build full coding agents from scratch using Claude</li><li>Master agentic workflows and multi-step pipelines</li><li>Deploy real-world AI-powered coding tools</li></ul>
           <button class="popup-cta">Add to cart</button>
         </div>
       </div>
- 
-      <!-- Card 2 -->
       <div class="course-card" data-index="1">
-        <div class="card-thumb">
-  <img src="https://img-c.udemycdn.com/course/240x135/1759114_873a_14.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;">
-</div>
+        <div class="card-thumb"><img src="https://img-c.udemycdn.com/course/240x135/1759114_873a_14.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="card-body">
           <div class="card-title">PMP Certification Exam Prep Course 35 PDU Contact Hours/PDU</div>
           <div class="card-author">TIA Training, Andrew Ramdayal</div>
-          <div class="card-meta">
-            <span class="badge">Bestseller</span>
-            <span class="star">★</span>
-            <span class="rating-num">4.7</span>
-            <span class="rating-count">(187,857 ratings)</span>
-          </div>
-          <div class="card-price">
-            <span class="price-now">₹499.00</span>
-            <span class="price-old">₹3,199.00</span>
-          </div>
+          <div class="card-meta"><span class="badge">Bestseller</span><span class="star">★</span><span class="rating-num">4.7</span><span class="rating-count">(187,857 ratings)</span></div>
+          <div class="card-price"><span class="price-now">₹499.00</span><span class="price-old">₹3,199.00</span></div>
         </div>
         <div class="popup">
           <div class="popup-title">PMP Certification Exam Prep Course 35 PDU Contact Hours/PDU</div>
-          <div class="popup-meta-row">
-            <span class="badge badge-green">Bestseller</span>
-            <span class="popup-updated">Updated <strong>Apr 2026</strong></span>
-          </div>
+          <div class="popup-meta-row"><span class="badge badge-green">Bestseller</span><span class="popup-updated">Updated <strong>Apr 2026</strong></span></div>
           <div class="popup-stats">35 total hours · All Levels · Subtitles</div>
           <div class="popup-desc">The most comprehensive PMP exam prep with 35 PDU contact hours and real exam simulations.</div>
-          <ul class="popup-bullets">
-            <li>Pass the PMP exam on your first attempt</li>
-            <li>35 PDU contact hours accepted by PMI</li>
-            <li>500+ practice questions with detailed explanations</li>
-          </ul>
+          <ul class="popup-bullets"><li>Pass the PMP exam on your first attempt</li><li>35 PDU contact hours accepted by PMI</li><li>500+ practice questions with detailed explanations</li></ul>
           <button class="popup-cta">Add to cart</button>
         </div>
       </div>
- 
-      <!-- Card 3 -->
       <div class="course-card" data-index="2">
-        <div class="card-thumb">
-  <img src="https://img-c.udemycdn.com/course/240x135/7066971_118a_4.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;">
-</div>
+        <div class="card-thumb"><img src="https://img-c.udemycdn.com/course/240x135/7066971_118a_4.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="card-body">
           <div class="card-title">The Complete Claude Code &amp; Claude Cowork Masterclass [2026]</div>
           <div class="card-author">Prof. Ryan Ahmed, Ph.D., MBA | 600,000+ Stude...</div>
-          <div class="card-meta">
-            <span class="badge">Bestseller</span>
-            <span class="star">★</span>
-            <span class="rating-num">4.6</span>
-            <span class="rating-count">(3,865 ratings)</span>
-          </div>
-          <div class="card-price">
-            <span class="price-now">₹479.00</span>
-            <span class="price-old">₹1,239.00</span>
-          </div>
+          <div class="card-meta"><span class="badge">Bestseller</span><span class="star">★</span><span class="rating-num">4.6</span><span class="rating-count">(3,865 ratings)</span></div>
+          <div class="card-price"><span class="price-now">₹479.00</span><span class="price-old">₹1,239.00</span></div>
         </div>
         <div class="popup">
           <div class="popup-title">The Complete Claude Code &amp; Claude Cowork Masterclass [2026]</div>
-          <div class="popup-meta-row">
-            <span class="badge badge-green">Bestseller</span>
-            <span class="popup-updated">Updated <strong>May 2026</strong></span>
-          </div>
+          <div class="popup-meta-row"><span class="badge badge-green">Bestseller</span><span class="popup-updated">Updated <strong>May 2026</strong></span></div>
           <div class="popup-stats">22 total hours · Beginner · Subtitles</div>
           <div class="popup-desc">Master Claude Code and Claude Cowork for agentic AI development and autonomous workflows.</div>
-          <ul class="popup-bullets">
-            <li>Use Claude Code for real-world software projects</li>
-            <li>Automate workflows with Claude Cowork</li>
-            <li>Build agentic pipelines end-to-end</li>
-          </ul>
+          <ul class="popup-bullets"><li>Use Claude Code for real-world software projects</li><li>Automate workflows with Claude Cowork</li><li>Build agentic pipelines end-to-end</li></ul>
           <button class="popup-cta">Add to cart</button>
         </div>
       </div>
- 
-      <!-- Card 4 -->
       <div class="course-card" data-index="3">
-        <div class="card-thumb">
-  <img src="https://img-c.udemycdn.com/course/240x135/6566789_2e8a_10.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;">
-</div>
+        <div class="card-thumb"><img src="https://img-c.udemycdn.com/course/240x135/6566789_2e8a_10.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="card-body">
           <div class="card-title">AI Engineer Agentic Track: The Complete Agent &amp; MCP Course</div>
           <div class="card-author">Ed Donner, Ligency</div>
-          <div class="card-meta">
-            <span class="badge">Bestseller</span>
-            <span class="star">★</span>
-            <span class="rating-num">4.7</span>
-            <span class="rating-count">(41,807 ratings)</span>
-          </div>
-          <div class="card-price">
-            <span class="price-now">₹499.00</span>
-            <span class="price-old">₹799.00</span>
-          </div>
+          <div class="card-meta"><span class="badge">Bestseller</span><span class="star">★</span><span class="rating-num">4.7</span><span class="rating-count">(41,807 ratings)</span></div>
+          <div class="card-price"><span class="price-now">₹499.00</span><span class="price-old">₹799.00</span></div>
         </div>
         <div class="popup">
           <div class="popup-title">AI Engineer Agentic Track: The Complete Agent &amp; MCP Course</div>
-          <div class="popup-meta-row">
-            <span class="badge badge-green">Bestseller</span>
-            <span class="popup-updated">Updated <strong>Jun 2026</strong></span>
-          </div>
+          <div class="popup-meta-row"><span class="badge badge-green">Bestseller</span><span class="popup-updated">Updated <strong>Jun 2026</strong></span></div>
           <div class="popup-stats">18 total hours · Intermediate · Subtitles</div>
           <div class="popup-desc">Build production-ready AI agents and master the Model Context Protocol (MCP) from scratch.</div>
-          <ul class="popup-bullets">
-            <li>Design and deploy autonomous AI agents</li>
-            <li>Implement MCP for multi-model coordination</li>
-            <li>Integrate agents with real-world APIs</li>
-          </ul>
+          <ul class="popup-bullets"><li>Design and deploy autonomous AI agents</li><li>Implement MCP for multi-model coordination</li><li>Integrate agents with real-world APIs</li></ul>
           <button class="popup-cta">Add to cart</button>
         </div>
       </div>
- 
-      <!-- Card 5 -->
       <div class="course-card" data-index="4">
-        <div class="card-thumb">
-  <img src="https://img-c.udemycdn.com/course/240x135/2776760_f176_10.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;">
-</div>
+        <div class="card-thumb"><img src="https://img-c.udemycdn.com/course/240x135/2776760_f176_10.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="card-body">
           <div class="card-title">The AI Engineer Course 2026: Complete AI Engineer Bootcamp</div>
           <div class="card-author">365 Careers</div>
-          <div class="card-meta">
-            <span class="badge">Bestseller</span>
-            <span class="star">★</span>
-            <span class="rating-num">4.6</span>
-            <span class="rating-count">(21,784 ratings)</span>
-          </div>
-          <div class="card-price">
-            <span class="price-now">₹499.00</span>
-            <span class="price-old">₹3,089.00</span>
-          </div>
+          <div class="card-meta"><span class="badge">Bestseller</span><span class="star">★</span><span class="rating-num">4.6</span><span class="rating-count">(21,784 ratings)</span></div>
+          <div class="card-price"><span class="price-now">₹499.00</span><span class="price-old">₹3,089.00</span></div>
         </div>
         <div class="popup">
           <div class="popup-title">The AI Engineer Course 2026: Complete AI Engineer Bootcamp</div>
-          <div class="popup-meta-row">
-            <span class="badge badge-green">Bestseller</span>
-            <span class="popup-updated">Updated <strong>May 2026</strong></span>
-          </div>
+          <div class="popup-meta-row"><span class="badge badge-green">Bestseller</span><span class="popup-updated">Updated <strong>May 2026</strong></span></div>
           <div class="popup-stats">29.5 total hours · All Levels · Subtitles</div>
           <div class="popup-desc">Complete AI Engineer Training: Python, NLP, Transformers, LLMs, LangChain, Hugging Face, APIs</div>
-          <ul class="popup-bullets">
-            <li>The course provides the entire toolbox you need to become an AI Engineer</li>
-            <li>Understand key Artificial Intelligence concepts and build a solid foundation</li>
-            <li>Start coding in Python and learn how to use it for NLP and AI</li>
-          </ul>
+          <ul class="popup-bullets"><li>The course provides the entire toolbox you need to become an AI Engineer</li><li>Understand key AI concepts and build a solid foundation</li><li>Start coding in Python and learn how to use it for NLP and AI</li></ul>
           <button class="popup-cta">Add to cart</button>
         </div>
       </div>
- 
-      <!-- Card 6 -->
       <div class="course-card" data-index="5">
-        <div class="card-thumb">
-  <img src="https://img-c.udemycdn.com/course/240x135/6100015_1979_5.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;">
-</div>
+        <div class="card-thumb"><img src="https://img-c.udemycdn.com/course/240x135/6100015_1979_5.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="card-body">
           <div class="card-title">Machine Learning A-Z: AI, Python &amp; R + ChatGPT Bonus [2026]</div>
           <div class="card-author">Kirill Eremenko, Hadelin de Ponteves</div>
-          <div class="card-meta">
-            <span class="badge">Bestseller</span>
-            <span class="star">★</span>
-            <span class="rating-num">4.5</span>
-            <span class="rating-count">(182,310 ratings)</span>
-          </div>
-          <div class="card-price">
-            <span class="price-now">₹479.00</span>
-            <span class="price-old">₹3,299.00</span>
-          </div>
+          <div class="card-meta"><span class="badge">Bestseller</span><span class="star">★</span><span class="rating-num">4.5</span><span class="rating-count">(182,310 ratings)</span></div>
+          <div class="card-price"><span class="price-now">₹479.00</span><span class="price-old">₹3,299.00</span></div>
         </div>
         <div class="popup">
           <div class="popup-title">Machine Learning A-Z: AI, Python &amp; R + ChatGPT Bonus [2026]</div>
-          <div class="popup-meta-row">
-            <span class="badge badge-green">Bestseller</span>
-            <span class="popup-updated">Updated <strong>Mar 2026</strong></span>
-          </div>
+          <div class="popup-meta-row"><span class="badge badge-green">Bestseller</span><span class="popup-updated">Updated <strong>Mar 2026</strong></span></div>
           <div class="popup-stats">44 total hours · All Levels · Subtitles</div>
           <div class="popup-desc">Learn to create Machine Learning algorithms in Python and R with hands-on projects.</div>
-          <ul class="popup-bullets">
-            <li>Master Machine Learning on Python and R</li>
-            <li>Handle advanced ML topics like Reinforcement Learning</li>
-            <li>Use ChatGPT as an AI coding companion</li>
-          </ul>
+          <ul class="popup-bullets"><li>Master Machine Learning on Python and R</li><li>Handle advanced ML topics like Reinforcement Learning</li><li>Use ChatGPT as an AI coding companion</li></ul>
           <button class="popup-cta">Add to cart</button>
         </div>
       </div>
- 
-      <!-- Card 7 -->
       <div class="course-card" data-index="6">
-        <div class="card-thumb">
-  <img src="https://img-c.udemycdn.com/course/240x135/7029917_06cb.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;">
-</div>
+        <div class="card-thumb"><img src="https://img-c.udemycdn.com/course/240x135/7029917_06cb.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="card-body">
           <div class="card-title">React – The Complete Guide 2026 (incl. React Router &amp; Redux)</div>
           <div class="card-author">Maximilian Schwarzmüller, Academind</div>
-          <div class="card-meta">
-            <span class="badge">Bestseller</span>
-            <span class="star">★</span>
-            <span class="rating-num">4.6</span>
-            <span class="rating-count">(218,024 ratings)</span>
-          </div>
-          <div class="card-price">
-            <span class="price-now">₹479.00</span>
-            <span class="price-old">₹3,499.00</span>
-          </div>
+          <div class="card-meta"><span class="badge">Bestseller</span><span class="star">★</span><span class="rating-num">4.6</span><span class="rating-count">(218,024 ratings)</span></div>
+          <div class="card-price"><span class="price-now">₹479.00</span><span class="price-old">₹3,499.00</span></div>
         </div>
         <div class="popup">
           <div class="popup-title">React – The Complete Guide 2026 (incl. React Router &amp; Redux)</div>
-          <div class="popup-meta-row">
-            <span class="badge badge-green">Bestseller</span>
-            <span class="popup-updated">Updated <strong>Apr 2026</strong></span>
-          </div>
+          <div class="popup-meta-row"><span class="badge badge-green">Bestseller</span><span class="popup-updated">Updated <strong>Apr 2026</strong></span></div>
           <div class="popup-stats">68 total hours · All Levels · Subtitles</div>
           <div class="popup-desc">Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, and more.</div>
-          <ul class="popup-bullets">
-            <li>Build powerful, fast, user-friendly React apps</li>
-            <li>Apply React hooks including custom hooks</li>
-            <li>Manage state with Redux and React Context</li>
-          </ul>
+          <ul class="popup-bullets"><li>Build powerful, fast, user-friendly React apps</li><li>Apply React hooks including custom hooks</li><li>Manage state with Redux and React Context</li></ul>
           <button class="popup-cta">Add to cart</button>
         </div>
       </div>
- 
-      <!-- Card 8 -->
       <div class="course-card" data-index="7">
-        <div class="card-thumb">
-  <img src="https://img-c.udemycdn.com/course/240x135/5969684_1f82_3.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;">
-</div>
+        <div class="card-thumb"><img src="https://img-c.udemycdn.com/course/240x135/5969684_1f82_3.jpg" alt="Course thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="card-body">
           <div class="card-title">100 Days of Code: The Complete Python Pro Bootcamp</div>
           <div class="card-author">Dr. Angela Yu, App Brewery</div>
-          <div class="card-meta">
-            <span class="badge">Bestseller</span>
-            <span class="star">★</span>
-            <span class="rating-num">4.7</span>
-            <span class="rating-count">(312,465 ratings)</span>
-          </div>
-          <div class="card-price">
-            <span class="price-now">₹479.00</span>
-            <span class="price-old">₹3,199.00</span>
-          </div>
+          <div class="card-meta"><span class="badge">Bestseller</span><span class="star">★</span><span class="rating-num">4.7</span><span class="rating-count">(312,465 ratings)</span></div>
+          <div class="card-price"><span class="price-now">₹479.00</span><span class="price-old">₹3,199.00</span></div>
         </div>
         <div class="popup">
           <div class="popup-title">100 Days of Code: The Complete Python Pro Bootcamp</div>
-          <div class="popup-meta-row">
-            <span class="badge badge-green">Bestseller</span>
-            <span class="popup-updated">Updated <strong>Jun 2026</strong></span>
-          </div>
+          <div class="popup-meta-row"><span class="badge badge-green">Bestseller</span><span class="popup-updated">Updated <strong>Jun 2026</strong></span></div>
           <div class="popup-stats">60 total hours · All Levels · Subtitles</div>
           <div class="popup-desc">Master Python by building 100 projects in 100 days, from web development to data science and AI.</div>
-          <ul class="popup-bullets">
-            <li>Program in Python professionally</li>
-            <li>Build real-world apps: games, apps, websites</li>
-            <li>Learn automation, data science, and machine learning</li>
-          </ul>
+          <ul class="popup-bullets"><li>Program in Python professionally</li><li>Build real-world apps: games, apps, websites</li><li>Learn automation, data science, and machine learning</li></ul>
           <button class="popup-cta">Add to cart</button>
         </div>
       </div>
- 
-    </div><!-- /slider-track -->
-    </div><!-- /slider-clip -->
- 
-    <!-- Right Arrow -->
+    </div>
+    </div>
     <button class="arrow arrow-right" id="arrowRight" aria-label="Next">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <polyline points="9 18 15 12 9 6"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
   </div>
 </section>
 
 <!-- Section 3 -->
-  <section class="trending">
-    <div class="trending__header">
-      <h2 class="trending__heading">Trending topics in India</h2>
+<section class="trending">
+  <div class="trending__header"><h2 class="trending__heading">Trending topics in India</h2></div>
+  <div class="trending__grid">
+    <div class="topic-col topic-col--ai">
+      <h3 class="topic-col__title">AI skills for work</h3>
+      <div class="topic-item"><a href="#" class="topic-item__link">See ChatGPT courses <span class="topic-item__chevron">&rsaquo;</span></a><p class="topic-item__learners">56 lakh learners</p></div>
+      <button class="show-all-btn">Show all trending topics <span class="show-all-btn__icon">&#8599;</span></button>
     </div>
- 
-    <div class="trending__grid">
- 
-      <!-- Column 1: AI skills for work -->
-      <div class="topic-col topic-col--ai">
-        <h3 class="topic-col__title">AI skills for work</h3>
- 
-        <div class="topic-item">
-          <a href="#" class="topic-item__link">See ChatGPT courses <span class="topic-item__chevron">&rsaquo;</span></a>
-          <p class="topic-item__learners">56 lakh learners</p>
-        </div>
- 
-        <button class="show-all-btn">
-          Show all trending topics <span class="show-all-btn__icon">&#8599;</span>
-        </button>
-      </div>
- 
-      <!-- Column 2: Development -->
-      <div class="topic-col">
-        <h3 class="topic-col__title">Development</h3>
- 
-        <div class="topic-item">
-          <a href="#" class="topic-item__link">Python <span class="topic-item__chevron">&rsaquo;</span></a>
-          <p class="topic-item__learners">5 crore learners</p>
-        </div>
- 
-        <div class="topic-item">
-          <a href="#" class="topic-item__link">Web Development <span class="topic-item__chevron">&rsaquo;</span></a>
-          <p class="topic-item__learners">1 crore learners</p>
-        </div>
- 
-        <div class="topic-item">
-          <a href="#" class="topic-item__link">Data Science <span class="topic-item__chevron">&rsaquo;</span></a>
-          <p class="topic-item__learners">84 lakh learners</p>
-        </div>
-      </div>
- 
-      <!-- Column 3: Data Analytics -->
-      <div class="topic-col">
-        <h3 class="topic-col__title">Data Analytics</h3>
- 
-        <div class="topic-item">
-          <a href="#" class="topic-item__link">Microsoft Excel <span class="topic-item__chevron">&rsaquo;</span></a>
-          <p class="topic-item__learners">2 crore learners</p>
-        </div>
- 
-        <div class="topic-item">
-          <a href="#" class="topic-item__link">SQL <span class="topic-item__chevron">&rsaquo;</span></a>
-          <p class="topic-item__learners">91 lakh learners</p>
-        </div>
- 
-        <div class="topic-item">
-          <a href="#" class="topic-item__link">Microsoft Power BI <span class="topic-item__chevron">&rsaquo;</span></a>
-          <p class="topic-item__learners">52 lakh learners</p>
-        </div>
-      </div>
- 
-      <!-- Column 4: Career Certifications -->
-      <div class="topic-col topic-col--wide">
-        <h3 class="topic-col__title">Career Certifications</h3>
- 
-        <div class="topic-item">
-          <a href="#" class="topic-item__link">PMI Project Management Professional (PMP) <span class="topic-item__chevron">&rsaquo;</span></a>
-          <p class="topic-item__learners">30 lakh learners</p>
-        </div>
- 
-        <div class="topic-item">
-          <a href="#" class="topic-item__link">AWS Certified Solutions Architect - Associate <span class="topic-item__chevron">&rsaquo;</span></a>
-          <p class="topic-item__learners">40 lakh learners</p>
-        </div>
- 
-        <div class="topic-item">
-          <a href="#" class="topic-item__link">AWS Certified Cloud Practitioner <span class="topic-item__chevron">&rsaquo;</span></a>
-          <p class="topic-item__learners">26 lakh learners</p>
-        </div>
-      </div>
- 
+    <div class="topic-col">
+      <h3 class="topic-col__title">Development</h3>
+      <div class="topic-item"><a href="#" class="topic-item__link">Python <span class="topic-item__chevron">&rsaquo;</span></a><p class="topic-item__learners">5 crore learners</p></div>
+      <div class="topic-item"><a href="#" class="topic-item__link">Web Development <span class="topic-item__chevron">&rsaquo;</span></a><p class="topic-item__learners">1 crore learners</p></div>
+      <div class="topic-item"><a href="#" class="topic-item__link">Data Science <span class="topic-item__chevron">&rsaquo;</span></a><p class="topic-item__learners">84 lakh learners</p></div>
     </div>
-  </section>
+    <div class="topic-col">
+      <h3 class="topic-col__title">Data Analytics</h3>
+      <div class="topic-item"><a href="#" class="topic-item__link">Microsoft Excel <span class="topic-item__chevron">&rsaquo;</span></a><p class="topic-item__learners">2 crore learners</p></div>
+      <div class="topic-item"><a href="#" class="topic-item__link">SQL <span class="topic-item__chevron">&rsaquo;</span></a><p class="topic-item__learners">91 lakh learners</p></div>
+      <div class="topic-item"><a href="#" class="topic-item__link">Microsoft Power BI <span class="topic-item__chevron">&rsaquo;</span></a><p class="topic-item__learners">52 lakh learners</p></div>
+    </div>
+    <div class="topic-col topic-col--wide">
+      <h3 class="topic-col__title">Career Certifications</h3>
+      <div class="topic-item"><a href="#" class="topic-item__link">PMI Project Management Professional (PMP) <span class="topic-item__chevron">&rsaquo;</span></a><p class="topic-item__learners">30 lakh learners</p></div>
+      <div class="topic-item"><a href="#" class="topic-item__link">AWS Certified Solutions Architect - Associate <span class="topic-item__chevron">&rsaquo;</span></a><p class="topic-item__learners">40 lakh learners</p></div>
+      <div class="topic-item"><a href="#" class="topic-item__link">AWS Certified Cloud Practitioner <span class="topic-item__chevron">&rsaquo;</span></a><p class="topic-item__learners">26 lakh learners</p></div>
+    </div>
+  </div>
+</section>
 
 <!-- Section 4 -->
- <section class="pp-section">
-    <div class="pp-card">
- 
-      <div class="pp-row">
- 
-        <!-- Text column: 454.4 x 430.93 -->
-        <div class="pp-text">
-          <h2 class="pp-heading">Build your career with a<br>Personal Plan subscription</h2>
- 
-          <p class="pp-subcopy">
-            Subscribers save an average of &#8377;4,000+ in their first month, stop
-            paying per course. Join 5 lakh+ learners, starting at &#8377;500/month.
-          </p>
- 
-          <div class="pp-features">
-            <div class="pp-feature">
-              <span class="pp-icon pp-icon--purple">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L13.8 8.2L20 10L13.8 11.8L12 18L10.2 11.8L4 10L10.2 8.2L12 2Z" fill="currentColor"/>
-                  <path d="M19 14L19.9 16.6L22.5 17.5L19.9 18.4L19 21L18.1 18.4L15.5 17.5L18.1 16.6L19 14Z" fill="currentColor"/>
-                </svg>
-              </span>
-              <p><strong>Get</strong> access to 28,000+ top-rated courses</p>
-            </div>
- 
-            <div class="pp-feature">
-              <span class="pp-icon pp-icon--teal">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 18H15M10 21H14M12 3C8.7 3 6 5.7 6 9C6 11.2 7.2 13.1 9 14.2V17H15V14.2C16.8 13.1 18 11.2 18 9C18 5.7 15.3 3 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <p><strong>Learn</strong> from 9,000+ expert instructors</p>
-            </div>
- 
-            <div class="pp-feature">
-              <span class="pp-icon pp-icon--pink">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="5" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
-                  <path d="M8 9.5L10.5 11.5L8 13.5M13 13.5H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <p><strong>Dev,</strong> IT, Business, Design and 50+ more topics</p>
-            </div>
- 
-            <div class="pp-feature">
-              <span class="pp-icon pp-icon--mint">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M8 4H16V9C16 11.2 14.2 13 12 13C9.8 13 8 11.2 8 9V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  <path d="M16 6H18.5C18.5 8 17 9.3 16 9.3M8 6H5.5C5.5 8 7 9.3 8 9.3M12 13V16M9 20H15M10.5 16H13.5V18.5C13.5 19.3 12.8 20 12 20C11.2 20 10.5 19.3 10.5 18.5V16Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <p><strong>Certification</strong> prep for AWS, Microsoft, PMI, and more</p>
-            </div>
-          </div>
- 
-          <div class="pp-actions">
-            <button class="pp-btn">Subscribe now</button>
-            <a href="#" class="pp-link">Learn more</a>
-          </div>
+<section class="pp-section">
+  <div class="pp-card">
+    <div class="pp-row">
+      <div class="pp-text">
+        <h2 class="pp-heading">Build your career with a<br>Personal Plan subscription</h2>
+        <p class="pp-subcopy">Subscribers save an average of &#8377;4,000+ in their first month, stop paying per course. Join 5 lakh+ learners, starting at &#8377;500/month.</p>
+        <div class="pp-features">
+          <div class="pp-feature"><span class="pp-icon pp-icon--purple"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L13.8 8.2L20 10L13.8 11.8L12 18L10.2 11.8L4 10L10.2 8.2L12 2Z" fill="currentColor"/><path d="M19 14L19.9 16.6L22.5 17.5L19.9 18.4L19 21L18.1 18.4L15.5 17.5L18.1 16.6L19 14Z" fill="currentColor"/></svg></span><p><strong>Get</strong> access to 28,000+ top-rated courses</p></div>
+          <div class="pp-feature"><span class="pp-icon pp-icon--teal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 18H15M10 21H14M12 3C8.7 3 6 5.7 6 9C6 11.2 7.2 13.1 9 14.2V17H15V14.2C16.8 13.1 18 11.2 18 9C18 5.7 15.3 3 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p><strong>Learn</strong> from 9,000+ expert instructors</p></div>
+          <div class="pp-feature"><span class="pp-icon pp-icon--pink"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 9.5L10.5 11.5L8 13.5M13 13.5H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p><strong>Dev,</strong> IT, Business, Design and 50+ more topics</p></div>
+          <div class="pp-feature"><span class="pp-icon pp-icon--mint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 4H16V9C16 11.2 14.2 13 12 13C9.8 13 8 11.2 8 9V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 6H18.5C18.5 8 17 9.3 16 9.3M8 6H5.5C5.5 8 7 9.3 8 9.3M12 13V16M9 20H15M10.5 16H13.5V18.5C13.5 19.3 12.8 20 12 20C11.2 20 10.5 19.3 10.5 18.5V16Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p><strong>Certification</strong> prep for AWS, Microsoft, PMI, and more</p></div>
         </div>
- 
-        <!-- Visual column -->
-        <div class="pp-visual">
- 
-          <!-- Main photo: 651 x 465 -->
-          <div class="pp-photo">
-            <span class="pp-shape pp-shape--1"></span>
-            <span class="pp-shape pp-shape--2"></span>
-            <span class="pp-shape pp-shape--3"></span>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDhtdyFBlD-p-ZcDNHlPLlvNWn_vE4QTQ8FA&s" alt="Course instructor" class="pp-photo__img">
-          </div>
- 
-          <!-- Decorative bleed panel -->
-          <div class="pp-panel">
-            <span class="pp-panel__blob pp-panel__blob--1"></span>
-            <span class="pp-panel__blob pp-panel__blob--2"></span>
-          </div>
- 
-        </div>
- 
+        <div class="pp-actions"><button class="pp-btn">Subscribe now</button><a href="#" class="pp-link">Learn more</a></div>
       </div>
- 
+      <div class="pp-visual">
+        <div class="pp-photo">
+          <span class="pp-shape pp-shape--1"></span><span class="pp-shape pp-shape--2"></span><span class="pp-shape pp-shape--3"></span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDhtdyFBlD-p-ZcDNHlPLlvNWn_vE4QTQ8FA&s" alt="Course instructor" class="pp-photo__img">
+        </div>
+        <div class="pp-panel"><span class="pp-panel__blob pp-panel__blob--1"></span><span class="pp-panel__blob pp-panel__blob--2"></span></div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- Section 5 -->
- <section class="tl-section">
-    <div class="tl-content">
- 
-      <h2 class="tl-heading">
-        Udemy is trusted by over 17,000 companies and millions of learners around the world
-      </h2>
+<section class="tl-section">
+  <div class="tl-content">
+    <h2 class="tl-heading">Udemy is trusted by over 17,000 companies and millions of learners around the world</h2>
+    <div class="tl-logos">
+      <div class="tl-logo"><img src="https://cms-images.udemycdn.com/96883mtakkm8/3E0eIh3tWHNWADiHNBmW4j/3444d1a4d029f283aa7d10ccf982421e/volkswagen_logo.svg"></div>
+      <div class="tl-logo"><img src="https://cms-images.udemycdn.com/96883mtakkm8/2pNyDO0KV1eHXk51HtaAAz/090fac96127d62e784df31e93735f76a/samsung_logo.svg"></div>
+      <div class="tl-logo"><img src="https://cms-images.udemycdn.com/96883mtakkm8/3YzfvEjCAUi3bKHLW2h1h8/ec478fa1ed75f6090a7ecc9a083d80af/cisco_logo.svg"></div>
+      <div class="tl-logo"><img src="https://cms-images.udemycdn.com/96883mtakkm8/23XnhdqwGCYUhfgIJzj3PM/77259d1ac2a7d771c4444e032ee40d9e/vimeo_logo_resized-2.svg"></div>
+      <div class="tl-logo"><img src="https://cms-images.udemycdn.com/96883mtakkm8/1UUVZtTGuvw23MwEnDPUr3/2683579ac045486a0aff67ce8a5eb240/procter_gamble_logo.svg"></div>
+      <div class="tl-logo"><img src="https://cms-images.udemycdn.com/96883mtakkm8/1GoAicYDYxxRPGnCpg93gi/a8b6190cc1a24e21d6226200ca488eb8/hewlett_packard_enterprise_logo.svg"></div>
+      <div class="tl-logo"><img src="https://cms-images.udemycdn.com/96883mtakkm8/2tQm6aYrWQzlKBQ95W00G/c7aaf002814c2cde71d411926eceaefa/citi_logo.svg"></div>
+      <div class="tl-logo"><img src="https://cms-images.udemycdn.com/96883mtakkm8/7guDRVYa2DZD0wD1SyxREP/b704dfe6b0ffb3b26253ec36b4aab505/ericsson_logo.svg"></div>
+    </div>
+  </div>
+</section>
 
-      <div class="tl-logos">
- 
-        <div class="tl-logo">
-          <img src="https://cms-images.udemycdn.com/96883mtakkm8/3E0eIh3tWHNWADiHNBmW4j/3444d1a4d029f283aa7d10ccf982421e/volkswagen_logo.svg">
+<!-- section 8 -->
+
+<section class="stories-section">
+    <div class="stories-container">
+
+        <h2 class="stories-title">
+            Join others transforming their lives through learning
+        </h2>
+
+        <div class="stories-grid">
+
+            <!-- Card 1 -->
+            <div class="story-card">
+                <div class="quote">❝</div>
+
+                <p class="story-text">
+                    The course did a great job explaining AI - from development
+                    through application. I appreciated the varying perspectives
+                    presented, which were helpful in understanding how to use AI
+                    responsibly as a tool in my profession.
+                </p>
+
+                <div class="author">
+                    <div class="author-img">
+    <img src="https://cms-images.udemycdn.com/96883mtakkm8/3RtbxhMUTMftb9PKczSTDW/f383a1effc2975968d2f87d9273c6e9d/cris-m.webp" alt="William A. Wachlin">
+</div>
+
+                    <div>
+                        <h4>Cris M.</h4>
+                        <p>Google AI Essentials graduate</p>
+                    </div>
+                </div>
+
+                <a href="#">View AI courses →</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="story-card">
+                <div class="quote">❝</div>
+
+                <p class="story-text">
+                    Udemy was truly a game-changer and a great guide for me as
+                    we brought Dimensional to life.
+                </p>
+
+                <div class="author">
+                    <div class="author-img">
+    <img src="https://cms-images.udemycdn.com/96883mtakkm8/1Djz6c0gZLaCG5SQS3PgUY/54b6fb8c85d8da01da95cbb94fa6335f/Alvin_Lim.jpeg" alt="William A. Wachlin">
+</div>
+
+                    <div>
+                        <h4>Alvin Lim</h4>
+                        <p>Technical Co-Founder, CTO at Dimensional</p>
+                    </div>
+                </div>
+
+                <a href="#">View this iOS & Swift course →</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="story-card">
+                <div class="quote">❝</div>
+
+                <p class="story-text">
+                    Udemy gives you the ability to be persistent. I learned
+                    exactly what I needed to know in the real world.
+                </p>
+
+                <div class="author">
+                    <div class="author-img">
+    <img src="https://cms-images.udemycdn.com/96883mtakkm8/6dT7xusLHYoOUizXeVqgUk/4317f63fe25b2e07ad8c70cda641014b/William_A_Wachlin.jpeg" alt="William A. Wachlin">
+</div>
+
+                    <div>
+                        <h4>William A. Wachlin</h4>
+                        <p>Partner Account Manager at Amazon Web Services</p>
+                    </div>
+                </div>
+
+                <a href="#">View this AWS course →</a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="story-card">
+                <div class="quote">❝</div>
+
+                <p class="story-text">
+                    I loved the course about AI Studio. Within 24 hours, I had
+                    a functional, highly useful app for my law firm.
+                </p>
+
+                <div class="author">
+                    <div class="author-img">
+    <img src="https://cms-images.udemycdn.com/96883mtakkm8/1AXU6146N5h3Ti9rGXytFv/4832b694a15fa19c4f0538ee0c71f55a/ben-c.webp" alt="William A. Wachlin">
+</div>
+
+                    <div>
+                        <h4>Ben C.</h4>
+                        <p>Google AI Professional Certificate graduate</p>
+                    </div>
+                </div>
+
+                <a href="#">View Google AI Certificates →</a>
+            </div>
+
         </div>
+
+        <a class="view-all" href="#">
+            View all stories →
+        </a>
+
+    </div>
+</section>
+
+<!-- section 7 -->
+<section class="accelerators">
+  <div class="accelerators__inner">
+    <h2 class="accelerators__title">Ready to reimagine your career?</h2>
+    <p class="accelerators__subtitle">
+      Get the skills and real-world experience employers want with Career Accelerators.
+    </p>
  
-        <div class="tl-logo">
-          <img src="https://cms-images.udemycdn.com/96883mtakkm8/2pNyDO0KV1eHXk51HtaAAz/090fac96127d62e784df31e93735f76a/samsung_logo.svg">
+    <div class="accelerators__grid">
+ 
+      <article class="card">
+        <div class="card__image" role="img" aria-label="Cloud Engineer course image">
+          <img src="https://s.udemycdn.com/career-academies/product-cards/career-card-cloud-engineer.png" alt="Cloud Engineer">
         </div>
- 
-        <div class="tl-logo">
-          <img src="https://cms-images.udemycdn.com/96883mtakkm8/3YzfvEjCAUi3bKHLW2h1h8/ec478fa1ed75f6090a7ecc9a083d80af/cisco_logo.svg">
+        <div class="card__body">
+          <h3 class="card__title">Cloud Engineer</h3>
+          <div class="card__meta">
+            <span class="badge badge--rating">
+              <svg class="badge__star" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.5l2.95 6.46 6.95.74-5.2 4.86 1.45 6.94L12 17.9l-6.15 3.6 1.45-6.94-5.2-4.86 6.95-.74L12 2.5z"/>
+              </svg>
+              4.7
+            </span>
+            <span class="badge">330K ratings</span>
+            <span class="badge">29 total hours</span>
+          </div>
         </div>
+      </article>
  
-        <div class="tl-logo">
-          <img src="https://cms-images.udemycdn.com/96883mtakkm8/23XnhdqwGCYUhfgIJzj3PM/77259d1ac2a7d771c4444e032ee40d9e/vimeo_logo_resized-2.svg">
+      <article class="card">
+        <div class="card__image" role="img" aria-label="Data Scientist course image">
+          <img src="https://s.udemycdn.com/career-academies/product-cards/career-card-data-scientist.png" alt="Cloud Engineer">
         </div>
- 
-        <div class="tl-logo">
-          <img src="https://cms-images.udemycdn.com/96883mtakkm8/1UUVZtTGuvw23MwEnDPUr3/2683579ac045486a0aff67ce8a5eb240/procter_gamble_logo.svg">
+        <div class="card__body">
+          <h3 class="card__title">Data Scientist</h3>
+          <div class="card__meta">
+            <span class="badge badge--rating">
+              <svg class="badge__star" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.5l2.95 6.46 6.95.74-5.2 4.86 1.45 6.94L12 17.9l-6.15 3.6 1.45-6.94-5.2-4.86 6.95-.74L12 2.5z"/>
+              </svg>
+              4.5
+            </span>
+            <span class="badge">227K ratings</span>
+            <span class="badge">47.1 total hours</span>
+          </div>
         </div>
+      </article>
  
-        <div class="tl-logo">
-          <img src="https://cms-images.udemycdn.com/96883mtakkm8/1GoAicYDYxxRPGnCpg93gi/a8b6190cc1a24e21d6226200ca488eb8/hewlett_packard_enterprise_logo.svg">
+      <article class="card">
+        <div class="card__image" role="img" aria-label="Digital Marketer course image">
+          <img src="https://s.udemycdn.com/career-academies/product-cards/career-card-digitalmarketer.png" alt="Cloud Engineer">
         </div>
- 
-        <div class="tl-logo">
-          <img src="https://cms-images.udemycdn.com/96883mtakkm8/2tQm6aYrWQzlKBQ95W00G/c7aaf002814c2cde71d411926eceaefa/citi_logo.svg">
+        <div class="card__body">
+          <h3 class="card__title">Digital Marketer</h3>
+          <div class="card__meta">
+            <span class="badge badge--rating">
+              <svg class="badge__star" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.5l2.95 6.46 6.95.74-5.2 4.86 1.45 6.94L12 17.9l-6.15 3.6 1.45-6.94-5.2-4.86 6.95-.74L12 2.5z"/>
+              </svg>
+              4.6
+            </span>
+            <span class="badge">4K ratings</span>
+            <span class="badge">28.4 total hours</span>
+          </div>
         </div>
- 
-        <div class="tl-logo">
-          <img src="https://cms-images.udemycdn.com/96883mtakkm8/7guDRVYa2DZD0wD1SyxREP/b704dfe6b0ffb3b26253ec36b4aab505/ericsson_logo.svg">
-        </div>
- 
-      </div>
+      </article>
  
     </div>
-  </section>
-
-  <!-- Section 6 -->
-   <div class="section">
-  <h2 class="section-heading">Learn AI with Google</h2>
  
+    <a href="accelerator.html" class="all-link">
+      All Career Accelerators
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- Section 6 -->
+<div class="section">
+  <h2 class="section-heading">Learn AI with Google</h2>
   <div class="banner">
-    <!-- Featured card -->
     <div class="featured-card">
-      <!-- Google logo -->
       <div>
-        <div class="google-logo">
-          <span class="gl-G">G</span><span class="gl-o">o</span><span class="gl-o2">o</span><span class="gl-g">g</span><span class="gl-l">l</span><span class="gl-e">e</span>
-        </div>
+        <div class="google-logo"><span class="gl-G">G</span><span class="gl-o">o</span><span class="gl-o2">o</span><span class="gl-g">g</span><span class="gl-l">l</span><span class="gl-e">e</span></div>
         <div class="featured-title">Google AI Professional Certificate</div>
         <div class="featured-desc">Build your AI fluency and get more done, faster.</div>
         <div class="featured-meta">
@@ -650,363 +661,72 @@
       </div>
       <button class="btn-learn-more">Learn more</button>
     </div>
- 
-    <!-- Course cards -->
     <div class="courses-wrapper">
       <div class="courses-clip" id="coursesClip">
         <div class="courses-track" id="coursesTrack">
- 
-          <!-- Card 1 -->
-          <div class="course-card">
-            <div class="course-thumb">
-              <div class="thumb-base">
-                <div class="person-sil ps1"></div>
-                <div class="g-badge"><span>G</span></div>
-                <div class="created-bar">
-                  <svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                  Created by <strong>Google</strong>
-                </div>
-              </div>
-            </div>
-            <div class="course-body">
-              <div class="course-name">AI Fundamentals</div>
-              <div class="course-chips">
-                <span class="course-chip">Course 1 of 7</span>
-                <span class="course-chip">1.2 hours</span>
-              </div>
-            </div>
-          </div>
- 
-          <!-- Card 2 -->
-          <div class="course-card">
-            <div class="course-thumb">
-              <div class="thumb-base">
-                <div class="person-sil ps2"></div>
-                <div class="g-badge"><span>G</span></div>
-                <div class="created-bar">
-                  <svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                  Created by <strong>Google</strong>
-                </div>
-              </div>
-            </div>
-            <div class="course-body">
-              <div class="course-name">AI for Brainstorming and Planning</div>
-              <div class="course-chips">
-                <span class="course-chip">Course 2 of 7</span>
-                <span class="course-chip">22 mins</span>
-              </div>
-            </div>
-          </div>
- 
-          <!-- Card 3 -->
-          <div class="course-card">
-            <div class="course-thumb">
-              <div class="thumb-base">
-                <div class="person-sil ps3"></div>
-                <div class="g-badge"><span>G</span></div>
-                <div class="created-bar">
-                  <svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                  Created by <strong>Google</strong>
-                </div>
-              </div>
-            </div>
-            <div class="course-body">
-              <div class="course-name">AI for Research and Insights</div>
-              <div class="course-chips">
-                <span class="course-chip">Course 3 of 7</span>
-                <span class="course-chip">32 mins</span>
-              </div>
-            </div>
-          </div>
- 
-          <!-- Card 4 -->
-          <div class="course-card">
-            <div class="course-thumb">
-              <div class="thumb-base">
-                <div class="person-sil ps4"></div>
-                <div class="g-badge"><span>G</span></div>
-                <div class="created-bar">
-                  <svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                  Created by <strong>Google</strong>
-                </div>
-              </div>
-            </div>
-            <div class="course-body">
-              <div class="course-name">AI for Writing and Communicating</div>
-              <div class="course-chips">
-                <span class="course-chip">Course 4 of 7</span>
-                <span class="course-chip">30 mins</span>
-              </div>
-            </div>
-          </div>
- 
-          <!-- Card 5 -->
-          <div class="course-card">
-            <div class="course-thumb">
-              <div class="thumb-base">
-                <div class="person-sil ps1"></div>
-                <div class="g-badge"><span>G</span></div>
-                <div class="created-bar">
-                  <svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                  Created by <strong>Google</strong>
-                </div>
-              </div>
-            </div>
-            <div class="course-body">
-              <div class="course-name">AI for Data Analysis</div>
-              <div class="course-chips">
-                <span class="course-chip">Course 5 of 7</span>
-                <span class="course-chip">28 mins</span>
-              </div>
-            </div>
-          </div>
- 
-          <!-- Card 6 -->
-          <div class="course-card">
-            <div class="course-thumb">
-              <div class="thumb-base">
-                <div class="person-sil ps3"></div>
-                <div class="g-badge"><span>G</span></div>
-                <div class="created-bar">
-                  <svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                  Created by <strong>Google</strong>
-                </div>
-              </div>
-            </div>
-            <div class="course-body">
-              <div class="course-name">AI for Coding and Development</div>
-              <div class="course-chips">
-                <span class="course-chip">Course 6 of 7</span>
-                <span class="course-chip">35 mins</span>
-              </div>
-            </div>
-          </div>
- 
-          <!-- Card 7 -->
-          <div class="course-card">
-            <div class="course-thumb">
-              <div class="thumb-base">
-                <div class="person-sil ps2"></div>
-                <div class="g-badge"><span>G</span></div>
-                <div class="created-bar">
-                  <svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                  Created by <strong>Google</strong>
-                </div>
-              </div>
-            </div>
-            <div class="course-body">
-              <div class="course-name">AI Strategy and Leadership</div>
-              <div class="course-chips">
-                <span class="course-chip">Course 7 of 7</span>
-                <span class="course-chip">40 mins</span>
-              </div>
-            </div>
-          </div>
- 
-        </div><!-- /track -->
-      </div><!-- /clip -->
- 
-      <!-- Arrow -->
-      <button class="arrow-right" id="arrowRight">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-      </button>
- 
-    </div><!-- /courses-wrapper -->
-  </div><!-- /banner -->
+          <div class="course-card"><div class="course-thumb"><div class="thumb-base"><div class="person-sil ps1"></div><div class="g-badge"><span>G</span></div><div class="created-bar"><svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Created by <strong>Google</strong></div></div></div><div class="course-body"><div class="course-name">AI Fundamentals</div><div class="course-chips"><span class="course-chip">Course 1 of 7</span><span class="course-chip">1.2 hours</span></div></div></div>
+          <div class="course-card"><div class="course-thumb"><div class="thumb-base"><div class="person-sil ps2"></div><div class="g-badge"><span>G</span></div><div class="created-bar"><svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Created by <strong>Google</strong></div></div></div><div class="course-body"><div class="course-name">AI for Brainstorming and Planning</div><div class="course-chips"><span class="course-chip">Course 2 of 7</span><span class="course-chip">22 mins</span></div></div></div>
+          <div class="course-card"><div class="course-thumb"><div class="thumb-base"><div class="person-sil ps3"></div><div class="g-badge"><span>G</span></div><div class="created-bar"><svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Created by <strong>Google</strong></div></div></div><div class="course-body"><div class="course-name">AI for Research and Insights</div><div class="course-chips"><span class="course-chip">Course 3 of 7</span><span class="course-chip">32 mins</span></div></div></div>
+          <div class="course-card"><div class="course-thumb"><div class="thumb-base"><div class="person-sil ps4"></div><div class="g-badge"><span>G</span></div><div class="created-bar"><svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Created by <strong>Google</strong></div></div></div><div class="course-body"><div class="course-name">AI for Writing and Communicating</div><div class="course-chips"><span class="course-chip">Course 4 of 7</span><span class="course-chip">30 mins</span></div></div></div>
+          <div class="course-card"><div class="course-thumb"><div class="thumb-base"><div class="person-sil ps1"></div><div class="g-badge"><span>G</span></div><div class="created-bar"><svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Created by <strong>Google</strong></div></div></div><div class="course-body"><div class="course-name">AI for Data Analysis</div><div class="course-chips"><span class="course-chip">Course 5 of 7</span><span class="course-chip">28 mins</span></div></div></div>
+          <div class="course-card"><div class="course-thumb"><div class="thumb-base"><div class="person-sil ps3"></div><div class="g-badge"><span>G</span></div><div class="created-bar"><svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Created by <strong>Google</strong></div></div></div><div class="course-body"><div class="course-name">AI for Coding and Development</div><div class="course-chips"><span class="course-chip">Course 6 of 7</span><span class="course-chip">35 mins</span></div></div></div>
+          <div class="course-card"><div class="course-thumb"><div class="thumb-base"><div class="person-sil ps2"></div><div class="g-badge"><span>G</span></div><div class="created-bar"><svg class="g-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Created by <strong>Google</strong></div></div></div><div class="course-body"><div class="course-name">AI Strategy and Leadership</div><div class="course-chips"><span class="course-chip">Course 7 of 7</span><span class="course-chip">40 mins</span></div></div></div>
+        </div>
+      </div>
+      <button class="arrow-right" id="arrowRight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+  </div>
 </div>
- 
-<!-- Footer -->
-   <footer class="ft">
- 
-    <!-- A: Top bar — 1280 x 93, padding 12px 48px -->
-    <div class="ft-topbar">
-      <div class="ft-topbar__inner">
-        <p class="ft-topbar__text">
-          Top companies choose <span class="ft-topbar__highlight">Udemy Business</span> to build in-demand career skills.
-        </p>
 
-        <div class="ft-topbar__logos">
-          <img src="https://s.udemycdn.com/partner-logos/v4/nasdaq-light.svg" alt="">
-          <img src="https://s.udemycdn.com/partner-logos/v4/volkswagen-light.svg" alt="">
-          <img src="https://s.udemycdn.com/partner-logos/v4/netapp-light.svg" alt="">
-          <img src="https://s.udemycdn.com/partner-logos/v4/eventbrite-light.svg" alt="">
-        </div>
+<!-- Footer -->
+<footer class="ft">
+  <div class="ft-topbar">
+    <div class="ft-topbar__inner">
+      <p class="ft-topbar__text">Top companies choose <span class="ft-topbar__highlight">Udemy Business</span> to build in-demand career skills.</p>
+      <div class="ft-topbar__logos">
+        <img src="https://s.udemycdn.com/partner-logos/v4/nasdaq-light.svg" alt="">
+        <img src="https://s.udemycdn.com/partner-logos/v4/volkswagen-light.svg" alt="">
+        <img src="https://s.udemycdn.com/partner-logos/v4/netapp-light.svg" alt="">
+        <img src="https://s.udemycdn.com/partner-logos/v4/eventbrite-light.svg" alt="">
       </div>
     </div>
- 
-    <!-- B: Mega menu — 1280 x 553.59, padding 48px 24px 0 -->
-    <div class="ft-megamenu">
-      <div class="ft-megamenu__inner">
+  </div>
+  <div class="ft-megamenu">
+    <div class="ft-megamenu__inner">
       <h2 class="ft-megamenu__heading">Explore top skills and certifications</h2>
- 
       <div class="ft-link-row">
-        <div class="ft-link-col">
-          <h3>In-demand Careers</h3>
-          <ul>
-            <li><a href="#">Data Scientist</a></li>
-            <li><a href="#">Full Stack Web Developer</a></li>
-            <li><a href="#">Cloud Engineer</a></li>
-            <li><a href="#">Project Manager</a></li>
-            <li><a href="#">Game Developer</a></li>
-            <li><a href="#">All Career Accelerators</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Web Development</h3>
-          <ul>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">JavaScript</a></li>
-            <li><a href="#">React JS</a></li>
-            <li><a href="#">Angular</a></li>
-            <li><a href="#">Java</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>IT Certifications</h3>
-          <ul>
-            <li><a href="#">Amazon AWS</a></li>
-            <li><a href="#">AWS Certified Cloud Practitioner</a></li>
-            <li><a href="#">AZ-900: Microsoft Azure Fundamentals</a></li>
-            <li><a href="#">AWS Certified Solutions Architect - Associate</a></li>
-            <li><a href="#">Kubernetes</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Leadership</h3>
-          <ul>
-            <li><a href="#">Leadership</a></li>
-            <li><a href="#">Management Skills</a></li>
-            <li><a href="#">Project Management</a></li>
-            <li><a href="#">Personal Productivity</a></li>
-            <li><a href="#">Emotional Intelligence</a></li>
-          </ul>
-        </div>
+        <div class="ft-link-col"><h3>In-demand Careers</h3><ul><li><a href="#">Data Scientist</a></li><li><a href="#">Full Stack Web Developer</a></li><li><a href="#">Cloud Engineer</a></li><li><a href="#">Project Manager</a></li><li><a href="#">Game Developer</a></li><li><a href="#">All Career Accelerators</a></li></ul></div>
+        <div class="ft-link-col"><h3>Web Development</h3><ul><li><a href="#">Web Development</a></li><li><a href="#">JavaScript</a></li><li><a href="#">React JS</a></li><li><a href="#">Angular</a></li><li><a href="#">Java</a></li></ul></div>
+        <div class="ft-link-col"><h3>IT Certifications</h3><ul><li><a href="#">Amazon AWS</a></li><li><a href="#">AWS Certified Cloud Practitioner</a></li><li><a href="#">AZ-900: Microsoft Azure Fundamentals</a></li><li><a href="#">AWS Certified Solutions Architect - Associate</a></li><li><a href="#">Kubernetes</a></li></ul></div>
+        <div class="ft-link-col"><h3>Leadership</h3><ul><li><a href="#">Leadership</a></li><li><a href="#">Management Skills</a></li><li><a href="#">Project Management</a></li><li><a href="#">Personal Productivity</a></li><li><a href="#">Emotional Intelligence</a></li></ul></div>
       </div>
- 
       <div class="ft-link-row">
-        <div class="ft-link-col">
-          <h3>Certifications by Skill</h3>
-          <ul>
-            <li><a href="#">Cybersecurity Certification</a></li>
-            <li><a href="#">Project Management Certification</a></li>
-            <li><a href="#">Cloud Certification</a></li>
-            <li><a href="#">Data Analytics Certification</a></li>
-            <li><a href="#">HR Management Certification</a></li>
-            <li><a href="#">See all Certifications</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Data Science</h3>
-          <ul>
-            <li><a href="#">Data Science</a></li>
-            <li><a href="#">Python</a></li>
-            <li><a href="#">Machine Learning</a></li>
-            <li><a href="#">ChatGPT</a></li>
-            <li><a href="#">Deep Learning</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Communication</h3>
-          <ul>
-            <li><a href="#">Communication Skills</a></li>
-            <li><a href="#">Presentation Skills</a></li>
-            <li><a href="#">Public Speaking</a></li>
-            <li><a href="#">Writing</a></li>
-            <li><a href="#">PowerPoint</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Business Analytics &amp; Intelligence</h3>
-          <ul>
-            <li><a href="#">Microsoft Excel</a></li>
-            <li><a href="#">SQL</a></li>
-            <li><a href="#">Microsoft Power BI</a></li>
-            <li><a href="#">Data Analysis</a></li>
-            <li><a href="#">Business Analysis</a></li>
-          </ul>
-        </div>
-      </div>
+        <div class="ft-link-col"><h3>Certifications by Skill</h3><ul><li><a href="#">Cybersecurity Certification</a></li><li><a href="#">Project Management Certification</a></li><li><a href="#">Cloud Certification</a></li><li><a href="#">Data Analytics Certification</a></li><li><a href="#">HR Management Certification</a></li><li><a href="#">See all Certifications</a></li></ul></div>
+        <div class="ft-link-col"><h3>Data Science</h3><ul><li><a href="#">Data Science</a></li><li><a href="#">Python</a></li><li><a href="#">Machine Learning</a></li><li><a href="#">ChatGPT</a></li><li><a href="#">Deep Learning</a></li></ul></div>
+        <div class="ft-link-col"><h3>Communication</h3><ul><li><a href="#">Communication Skills</a></li><li><a href="#">Presentation Skills</a></li><li><a href="#">Public Speaking</a></li><li><a href="#">Writing</a></li><li><a href="#">PowerPoint</a></li></ul></div>
+        <div class="ft-link-col"><h3>Business Analytics &amp; Intelligence</h3><ul><li><a href="#">Microsoft Excel</a></li><li><a href="#">SQL</a></li><li><a href="#">Microsoft Power BI</a></li><li><a href="#">Data Analysis</a></li><li><a href="#">Business Analysis</a></li></ul></div>
       </div>
     </div>
- 
-    <!-- C: Lower footer — 1280 x 257.59, padding 24px 48px 0 -->
-    <div class="ft-lower">
-      <div class="ft-lower__inner">
+  </div>
+  <div class="ft-lower">
+    <div class="ft-lower__inner">
       <div class="ft-link-row ft-link-row--lower">
-        <div class="ft-link-col">
-          <h3>About</h3>
-          <ul>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Investors</a></li>
-            <li><a href="#">Find more on Coursera</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Discover Udemy</h3>
-          <ul>
-            <li><a href="#">Get the app</a></li>
-            <li><a href="#">Teach on Udemy</a></li>
-            <li><a href="#">Plans and Pricing</a></li>
-            <li><a href="#">Affiliate</a></li>
-            <li><a href="#">Help and Support</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Udemy for Business</h3>
-          <ul>
-            <li><a href="#">Udemy Business</a></li>
-          </ul>
-        </div>
- 
-        <div class="ft-link-col">
-          <h3>Legal &amp; Accessibility</h3>
-          <ul>
-            <li><a href="#">Accessibility statement</a></li>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">Sitemap</a></li>
-            <li><a href="#">Terms</a></li>
-          </ul>
-        </div>
-      </div>
+        <div class="ft-link-col"><h3>About</h3><ul><li><a href="#">About us</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact us</a></li><li><a href="#">Blog</a></li><li><a href="#">Investors</a></li><li><a href="#">Find more on Coursera</a></li></ul></div>
+        <div class="ft-link-col"><h3>Discover Udemy</h3><ul><li><a href="#">Get the app</a></li><li><a href="#">Teach on Udemy</a></li><li><a href="#">Plans and Pricing</a></li><li><a href="#">Affiliate</a></li><li><a href="#">Help and Support</a></li></ul></div>
+        <div class="ft-link-col"><h3>Udemy for Business</h3><ul><li><a href="#">Udemy Business</a></li></ul></div>
+        <div class="ft-link-col"><h3>Legal &amp; Accessibility</h3><ul><li><a href="#">Accessibility statement</a></li><li><a href="#">Privacy policy</a></li><li><a href="#">Sitemap</a></li><li><a href="#">Terms</a></li></ul></div>
       </div>
     </div>
- 
-    <!-- D: Bottom bar — 1280 x 83.2, padding 0 48px -->
-    <div class="ft-bottombar">
-      <div class="ft-bottombar__inner">
-      <div class="ft-bottombar__brand">
-        <!-- NOTE: placeholder for the official Udemy logo asset -->
-        <span class="ft-udemy-placeholder">Udemy</span>
-        <span class="ft-bottombar__copyright">&copy; 2026 Udemy, Inc.</span>
-      </div>
- 
+  </div>
+  <div class="ft-bottombar">
+    <div class="ft-bottombar__inner">
+      <div class="ft-bottombar__brand"><span class="ft-udemy-placeholder">Udemy</span><span class="ft-bottombar__copyright">&copy; 2026 Udemy, Inc.</span></div>
       <a href="#" class="ft-bottombar__cookie">Cookie settings</a>
- 
-      <div class="ft-bottombar__lang">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M3 12H21M12 3C14.5 5.5 15.8 8.6 15.8 12C15.8 15.4 14.5 18.5 12 21C9.5 18.5 8.2 15.4 8.2 12C8.2 8.6 9.5 5.5 12 3Z" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-        <span>English</span>
-      </div>
-      </div>
+      <div class="ft-bottombar__lang"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12H21M12 3C14.5 5.5 15.8 8.6 15.8 12C15.8 15.4 14.5 18.5 12 21C9.5 18.5 8.2 15.4 8.2 12C8.2 8.6 9.5 5.5 12 3Z" stroke="currentColor" stroke-width="1.6"/></svg><span>English</span></div>
     </div>
- 
-  </footer>
-</body>
+  </div>
+</footer>
+
 <script>
 // Mobile nav toggle
 (function(){
@@ -1018,76 +738,71 @@
   });
 })();
 
-// Section 1
+// Section 1 slider
 const slides = document.querySelectorAll(".slide");
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
-
 let index = 0;
+function showSlide(i){ slides.forEach(s=>s.classList.remove("active")); slides[i].classList.add("active"); }
+next.addEventListener("click",()=>{ index=(index+1)%slides.length; showSlide(index); });
+prev.addEventListener("click",()=>{ index=(index-1+slides.length)%slides.length; showSlide(index); });
+setInterval(()=>{ index=(index+1)%slides.length; showSlide(index); },5000);
 
-function showSlide(i){
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[i].classList.add("active");
-}
+// Mega dropdown — hover on left items shows right sub-panel
+(function(){
+  const megaItems = document.querySelectorAll('.mega-item[data-sub]');
+  const megaSubs  = document.querySelectorAll('.mega-sub');
 
-next.addEventListener("click", () => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-});
+  function showSub(subKey) {
+    megaSubs.forEach(s => s.classList.toggle('active', s.dataset.sub === subKey));
+    megaItems.forEach(i => i.classList.toggle('active', i.dataset.sub === subKey));
+  }
 
-prev.addEventListener("click", () => {
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-});
+  // Default: show first sub on dropdown open
+  const firstItem = document.querySelector('.mega-item[data-sub]');
+  if (firstItem) showSub(firstItem.dataset.sub);
 
-setInterval(() => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-}, 5000);
+  megaItems.forEach(item => {
+    item.addEventListener('mouseenter', () => showSub(item.dataset.sub));
+  });
 
-// Section 2 — native scroll-snap carousel.
-// No fixed pixel math: arrows scroll by the clip's own visible width,
-// so this works correctly at any viewport/card size without a resize listener.
+  // Mobile: tap to toggle sub
+  megaItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      showSub(item.dataset.sub);
+    });
+  });
+})();
+
+// Section 2 carousel
 (function () {
-  const clip       = document.getElementById('sliderClip');
-  const track      = document.getElementById('sliderTrack');
-  const arrowLeft  = document.getElementById('arrowLeft');
+  const clip = document.getElementById('sliderClip');
+  const track = document.getElementById('sliderTrack');
+  const arrowLeft = document.getElementById('arrowLeft');
   const arrowRight = document.getElementById('arrowRight');
-  const cards      = Array.from(track.querySelectorAll('.course-card'));
+  const cards = Array.from(track.querySelectorAll('.course-card'));
 
-  /* ── Add caret elements to each popup (desktop only) ── */
   cards.forEach(card => {
     const popup = card.querySelector('.popup');
     if (!popup) return;
-    const caretL = document.createElement('div');
-    caretL.className = 'popup-caret popup-caret-left';
-    const caretR = document.createElement('div');
-    caretR.className = 'popup-caret popup-caret-right';
-    popup.appendChild(caretL);
-    popup.appendChild(caretR);
+    const caretL = document.createElement('div'); caretL.className = 'popup-caret popup-caret-left';
+    const caretR = document.createElement('div'); caretR.className = 'popup-caret popup-caret-right';
+    popup.appendChild(caretL); popup.appendChild(caretR);
   });
 
-  function isDesktop() {
-    return window.matchMedia('(min-width: 861px)').matches && window.matchMedia('(hover: hover)').matches;
-  }
+  function isDesktop() { return window.matchMedia('(min-width: 861px)').matches && window.matchMedia('(hover: hover)').matches; }
 
-  /* ── Position popup using fixed coords (desktop hover only) ── */
   function positionPopup(card) {
     if (!isDesktop()) return;
     const popup = card.querySelector('.popup');
     if (!popup) return;
-
-    const rect    = card.getBoundingClientRect();
-    const popupW  = 300;
-    const margin  = 10;
+    const rect = card.getBoundingClientRect();
+    const popupW = 300, margin = 10;
     const clipRect = clip.getBoundingClientRect();
-
-    const spaceRight = clipRect.right - rect.right;
-    const openLeft   = spaceRight < (popupW + margin);
-
+    const openLeft = (clipRect.right - rect.right) < (popupW + margin);
     const caretL = popup.querySelector('.popup-caret-left');
     const caretR = popup.querySelector('.popup-caret-right');
-
     if (openLeft) {
       popup.style.left = (rect.left - popupW - margin) + 'px';
       if (caretL) caretL.style.display = 'none';
@@ -1097,58 +812,43 @@ setInterval(() => {
       if (caretL) caretL.style.display = 'block';
       if (caretR) caretR.style.display = 'none';
     }
-
     popup.style.top = rect.top + 'px';
-
     const popupH = popup.offsetHeight || 340;
     const maxTop = window.innerHeight - popupH - 10;
-    if (rect.top > maxTop) {
-      popup.style.top = Math.max(10, maxTop) + 'px';
-    }
+    if (rect.top > maxTop) popup.style.top = Math.max(10, maxTop) + 'px';
   }
 
   cards.forEach(card => {
     card.addEventListener('mouseenter', () => positionPopup(card));
-    card.addEventListener('mousemove',  () => positionPopup(card));
+    card.addEventListener('mousemove', () => positionPopup(card));
   });
 
-  /* ── Arrow scroll, sized to whatever is currently visible ── */
   function updateArrows() {
     const max = track.scrollWidth - clip.clientWidth - 1;
     arrowLeft.classList.toggle('hidden', clip.scrollLeft <= 0);
     arrowRight.classList.toggle('hidden', clip.scrollLeft >= max);
   }
-
-  arrowRight.addEventListener('click', () => {
-    clip.scrollBy({ left: clip.clientWidth, behavior: 'smooth' });
-  });
-  arrowLeft.addEventListener('click', () => {
-    clip.scrollBy({ left: -clip.clientWidth, behavior: 'smooth' });
-  });
-
+  arrowRight.addEventListener('click', () => clip.scrollBy({ left: clip.clientWidth, behavior: 'smooth' }));
+  arrowLeft.addEventListener('click', () => clip.scrollBy({ left: -clip.clientWidth, behavior: 'smooth' }));
   clip.addEventListener('scroll', updateArrows, { passive: true });
   window.addEventListener('resize', updateArrows);
   updateArrows();
 })();
 
-// Section 6 — native scroll-snap carousel.
+// Section 6 carousel
 (function(){
-  const clip       = document.getElementById('coursesClip');
-  const track      = document.getElementById('coursesTrack');
+  const clip = document.getElementById('coursesClip');
+  const track = document.getElementById('coursesTrack');
   const arrowRight = document.getElementById('arrowRight');
-
   function updateArrow() {
     const max = track.scrollWidth - clip.clientWidth - 1;
     arrowRight.classList.toggle('hidden', clip.scrollLeft >= max);
   }
-
-  arrowRight.addEventListener('click', () => {
-    clip.scrollBy({ left: clip.clientWidth, behavior: 'smooth' });
-  });
-
+  arrowRight.addEventListener('click', () => clip.scrollBy({ left: clip.clientWidth, behavior: 'smooth' }));
   clip.addEventListener('scroll', updateArrow, { passive: true });
   window.addEventListener('resize', updateArrow);
   updateArrow();
 })();
 </script>
+</body>
 </html>
